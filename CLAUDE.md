@@ -22,7 +22,23 @@ No build step, bundler, or package manager is needed to run the app.
 python3 -m http.server 8000   # then open http://localhost:8000/ (ES modules fail over file://)
 ```
 
-No test runner has been chosen yet; tests live in `tests/`. When one is added, document how to run the suite and a single test here.
+```bash
+node --test 'tests/*.test.mjs'              # whole suite (Node's built-in runner, no npm deps)
+node --test tests/version.test.mjs          # one file
+node --test --test-name-pattern='docs badge' 'tests/*.test.mjs'   # one test by name
+```
+
+## Versioning (SemVer)
+
+`APP_VERSION` in `js/version.js` is the release version. It's stamped small in the homepage footer, which is handy for checking that a deploy went live. **MAJOR** means a change breaks saved data (`localStorage` keys or format) or the documented project data format. **MINOR** means a new page, feature, or theme the user can see. **PATCH** covers fixes and small tweaks. The project stays at 0.x until the full star maker from `docs/project-spec.md` ships as 1.0.0.
+
+Every release:
+1. Bump `APP_VERSION`.
+2. Move `[Unreleased]` items in `CHANGELOG.md` into a `## [x.y.z] - YYYY-MM-DD` entry and add its compare link.
+3. Update the `data-docs-version` badge in `docs/index.html`.
+4. Commit, run `git tag vX.Y.Z`, then `git push && git push --tags`.
+
+`tests/version.test.mjs` fails if those three disagree. `schemaVersion`, `rendererVersion` and `prototypeVersion` version data formats, not releases, so bump them only when their format changes.
 
 ## Hard constraints
 

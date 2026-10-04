@@ -57,3 +57,4 @@ a { color: var(--accent); }
 }
 .button:hover { background: #1b4470; }
 .button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.version { margin-left: 8px; color: var(--muted); font-size: .8rem; }

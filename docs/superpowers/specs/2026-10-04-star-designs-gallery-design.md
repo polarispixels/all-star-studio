@@ -10,6 +10,7 @@ Date: 2026-10-04. Source brief: `docs/prototype-iteration-brief.md`, which holds
 | Deploy | Push to `main` (which goes live) once all checks pass. Then confirm the live URL. |
 | Homepage buttons | A big primary **Star Designs** button (to `designs/`) and an outlined **Heart Examples** button (to `ideas/`). The small "About this project" docs link stays. |
 | Layout | One scrolling page at `designs/`, with a sticky jump bar: Outdoor · Support · Quick Response · Phoenix · Questions · Send. |
+| Release | Ships as **0.3.0** (MINOR: a new page), following the versioning policy in CLAUDE.md and CHANGELOG.md. |
 | Simplicity | Big tap targets, plain one- or two-word button labels, and no forced order. |
 
 ## Homepage
@@ -63,7 +64,7 @@ Inline SVG: `fetch` the file and rewrite every `id` and its `url(#…)`/`href="#
 
 ## Testing
 
-- `node --test tests/`: covers feedback serialization, unanswered values, follow-up visibility, the version mismatch path, and a summary that matches its choices. Tests use no dependencies.
+- `node --test 'tests/*.test.mjs'`: covers feedback serialization, unanswered values, follow-up visibility, the version mismatch path, and a summary that matches its choices. Tests use no dependencies.
 - `node tests/check-svgs.mjs`: for each prototype, checks for no external references, scripts or images, that every `url(#)` resolves, that the viewBox is correct, and that the star polygon is present.
 - Headless Chrome screenshots of the homepage and `designs/` at 360px and desktop width in light and dark, plus all eight SVGs at large and 64px sizes.
 - Serve the parent directory and load `/all-star-studio/designs/` to check that links work under the repository subpath.
@@ -71,7 +72,7 @@ Inline SVG: `fetch` the file and rewrite every `id` and its `url(#…)`/`href="#
 
 ## Docs
 
-The docs page links to the brief and to a short "Prototype iteration status" section listing what was built and the open decisions from the brief. CLAUDE.md gets the test commands.
+The docs page links to the brief and to a short "Prototype iteration status" section listing what was built and the open decisions from the brief. CHANGELOG.md gets the 0.3.0 entry, and the docs badge is updated.
 
 ## Out of scope
 
