@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Status
 
-Pre-implementation. The authoritative specification is `docs/project-spec.md` (v1.0, 2026-10-04). Read the relevant section before building a feature. Follow the milestone order in spec §15: the rendering engine comes first, and language interpretation waits until clean stars can be generated. The spec does **not** authorize creating a GitHub repository or deploying, so ask before doing either.
+A coming-soon page is live; the app itself isn't built yet. The authoritative specification is `docs/project-spec.md` (v1.0, 2026-10-04). Read the relevant section before building a feature. Follow the milestone order in spec §15: the rendering engine comes first, and language interpretation waits until clean stars can be generated.
+
+The repo is `polarispixels/all-star-studio` (public). GitHub Pages builds from the `main` branch root, so **every push to `main` deploys to the live URL that Ryan's mother has bookmarked**. Keep `main` working and don't remove the entry page.
 
 All-Star Studio is a browser tool that generates five-point star artwork. Each region's color and pattern represents a user-defined concept. The first user is Ryan's mother, who is designing for a logo contest and isn't a designer. Use plain-language labels and show useful presets before she types anything.
 
