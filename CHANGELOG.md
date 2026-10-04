@@ -11,6 +11,13 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-10-04
+
+### Added
+- Sixth star shape, **Squared and softened** (`blend`): a shorter flat cut on each point than Squared-off
+  (70 vs 100 units back along the edges), with a gentle 30-unit radius on every corner, to match the
+  company heart's style. Requested by Ryan. Saved shape answers stay valid.
+
 ## [0.4.0] - 2026-10-04
 
 ### Added
@@ -77,7 +84,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/polarispixels/all-star-studio/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/polarispixels/all-star-studio/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/polarispixels/all-star-studio/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/polarispixels/all-star-studio/compare/v0.2.2...v0.3.0

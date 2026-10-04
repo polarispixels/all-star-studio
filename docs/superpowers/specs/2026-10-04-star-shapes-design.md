@@ -26,6 +26,7 @@ All shapes share the `0 0 1000 1000` viewBox, the same center, and the same oute
 | `chunky` | Chunky and round | Large rounded tips, like the heart's corners |
 | `plump` | Plump | Shorter, wider arms (higher inner ratio) with rounded corners, closest to the heart's proportions |
 | `boxy` | Squared-off | Tips cut flat with lightly rounded corners, a blocky look |
+| `blend` | Squared and softened | Added in v0.4.1 at Ryan's request: a shorter flat cut than `boxy` (chamfer 70 vs 100) with a subtle 30-unit radius on every corner |
 
 The generator also writes each shape's kayak version by taking the artwork group from `assets/prototypes/outdoors-illustrated.svg` and re-clipping it with the new silhouette and outline. If a plumper shape exposes empty edges, extend the scene's background shapes in the generator rather than hand-editing the output. Output goes to `assets/shapes/<id>.svg` and `assets/shapes/<id>-kayak.svg`, and the output passes the existing SVG checker. The checker's "shared star polygon" rule is relaxed for `assets/shapes/` so it accepts the shape's own path instead.
 

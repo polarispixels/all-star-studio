@@ -11,6 +11,7 @@ export const SHAPES = [
   { id: 'chunky', name: 'Chunky and round', ratio: 0.48, tip: 95, valley: 40 },
   { id: 'plump', name: 'Plump', ratio: 0.56, tip: 70, valley: 34 },
   { id: 'boxy', name: 'Squared-off', ratio: 0.5, tip: 18, valley: 16, chamfer: 100 },
+  { id: 'blend', name: 'Squared and softened', ratio: 0.5, tip: 30, valley: 30, chamfer: 70 },
 ];
 
 const round = (n) => Math.round(n * 10) / 10;

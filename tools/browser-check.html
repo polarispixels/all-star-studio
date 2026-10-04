@@ -61,8 +61,8 @@ try {
   ok(d().querySelectorAll('.theme').length === 4, 'page still works with corrupt storage');
   // ---- Star Shapes ----
   f.src = '../shapes/'; await loaded(); await sleep(900);
-  ok(d().querySelectorAll('.shape-card').length === 5, 'shapes: five shape cards');
-  ok(d().querySelectorAll('.shape-card svg').length === 5 * 5, 'shapes: 5 SVG copies per card');
+  ok(d().querySelectorAll('.shape-card').length === 6, 'shapes: six shape cards');
+  ok(d().querySelectorAll('.shape-card svg').length === 6 * 5, 'shapes: 5 SVG copies per card');
   const sids = [...d().querySelectorAll('[id]')].map((e) => e.id);
   ok(new Set(sids).size === sids.length, 'shapes: all ids unique');
   ok(d().getElementById('summary').textContent.includes('Favorite shape: Not answered'), 'shapes: summary starts unanswered');
