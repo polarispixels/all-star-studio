@@ -102,6 +102,21 @@ try {
   ok(d().querySelector('h1').textContent.includes("couldn't find"), 'member: unknown id shows not-found');
   f.src = '../member/?id=new'; await loaded(); await sleep(600);
   ok(!!d().getElementById('new-name') && !!d().getElementById('request'), 'member: new-star page has name and idea fields');
+  // ---- Team Star ----
+  f.src = '../team/'; await loaded(); await sleep(900);
+  ok([...d().querySelectorAll('.shape-letter')].map((e) => e.textContent).join('') === 'ABCD', 'team: options lettered A-D');
+  ok(d().querySelectorAll('.team-card svg').length === 4 * 5, 'team: each option shows hero + 4 real-use previews');
+  const tids = [...d().querySelectorAll('[id]')].map((e) => e.id);
+  ok(new Set(tids).size === tids.length, 'team: all ids unique');
+  click('input[name="favorite"][value="d-five"]');
+  const tc = d().getElementById('comment-c-mosaic'); tc.value = 'Fewer pieces'; tc.dispatchEvent(new Event('input', { bubbles: true }));
+  await sleep(500); w().location.reload(); await loaded(); await sleep(900);
+  ok(d().querySelector('input[name="favorite"][value="d-five"]').checked && d().getElementById('comment-c-mosaic').value === 'Fewer pieces', 'team: pick and note survive reload');
+  ok(d().getElementById('summary').textContent.includes('Favorite option: D. Five-piece puzzle'), 'team: summary names the lettered pick');
+  const tcir = d().querySelector('.team-card .circle'), tcs = tcir.querySelector('svg').getBoundingClientRect(), tcr = tcir.getBoundingClientRect();
+  ok(Math.abs((tcs.left + tcs.width / 2) - (tcr.left + tcr.width / 2)) < 0.5 && Math.abs((tcs.top + tcs.height / 2) - (tcr.top + tcr.height / 2)) < 0.5, 'team: star centered in circle');
+  [...d().querySelectorAll('#option-d-five button')].find((b) => b.textContent === 'Download PNG').click(); await sleep(1500);
+  ok(/Downloaded all-stars-team-star-d\.png/.test(d().querySelector('#option-d-five .dl-status').textContent), 'team: PNG download confirms');
 } catch (e) { out.push('ERROR ' + e.stack); }
 document.getElementById('out').textContent = out.join('\n') + '\nDONE';
 </script>

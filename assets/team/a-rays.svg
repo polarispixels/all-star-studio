@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="team-a-t team-a-d">
+  <title id="team-a-t">All-Stars team star: colorful rays</title>
+  <desc id="team-a-d">A five-point star filled with colorful rays, stripes, and dots.</desc>
+  <defs>
+    <clipPath id="team-a-ass-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath>
+    <pattern id="team-a-ass-stripes" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="36" fill="#fff" fill-opacity=".35"/></pattern>
+    <pattern id="team-a-ass-dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="7" fill="#fff" fill-opacity=".4"/></pattern>
+  </defs>
+  <g clip-path="url(#team-a-ass-clip)">
+    <path d="M488 520L332 -366L796 -326Z" fill="#24558A"/>
+    <path d="M488 520L796 -326L1177 -59Z" fill="#F2B21A"/>
+    <path d="M488 520L796 -326L1177 -59Z" fill="url(#team-a-ass-stripes)"/>
+    <path d="M488 520L1177 -59L1374 364Z" fill="#E56B6F"/>
+    <path d="M488 520L1374 364L1334 828Z" fill="#8056A6"/>
+    <path d="M488 520L1374 364L1334 828Z" fill="url(#team-a-ass-dots)"/>
+    <path d="M488 520L1334 828L1067 1209Z" fill="#188C93"/>
+    <path d="M488 520L1067 1209L644 1406Z" fill="#4C9653"/>
+    <path d="M488 520L1067 1209L644 1406Z" fill="url(#team-a-ass-stripes)"/>
+    <path d="M488 520L644 1406L180 1366Z" fill="#24558A"/>
+    <path d="M488 520L180 1366L-201 1099Z" fill="#F2B21A"/>
+    <path d="M488 520L-201 1099L-398 676Z" fill="#E56B6F"/>
+    <path d="M488 520L-201 1099L-398 676Z" fill="url(#team-a-ass-dots)"/>
+    <path d="M488 520L-398 676L-358 212Z" fill="#8056A6"/>
+    <path d="M488 520L-358 212L-91 -169Z" fill="#188C93"/>
+    <path d="M488 520L-358 212L-91 -169Z" fill="url(#team-a-ass-stripes)"/>
+    <path d="M488 520L-91 -169L332 -366Z" fill="#4C9653"/>
+  </g>
+  <path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

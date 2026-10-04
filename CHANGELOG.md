@@ -11,6 +11,26 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-10-04
+
+### Added
+- **Team Star page** (`team/`): four lettered candidate logos for the whole team, for the contest due
+  2026-10-22, all on house shape B:
+  - **A. Colorful rays:** the homepage star.
+  - **B. Pieces of everyone:** one symbol per arm (Becky's mountain, Scott's phoenix wing, Dixie's flame, the
+    Detective's magnifying glass, the Support ribbon) around a gold center star.
+  - **C. Puzzle mosaic:** 18 interlocking jigsaw pieces in the team colors.
+  - **D. Five-piece puzzle:** one piece per arm, with knobs all turning the same way (exact five-fold symmetry).
+- Each option shows real-use previews (email signature, Teams, circle, dark mode), Download PNG/SVG, an
+  "Option X is my favorite" pick with notes, and the Send to Ryan section.
+- `tools/build-team.mjs` generates A, C and D (seeded jigsaw edges, no `Math.random()`). Tests check D's
+  symmetry, C's piece count and colors, and that the generated files are up to date.
+- `js/pick-feedback.js`: a shared pick-one feedback model, now used by Star Shapes and Team Star.
+
+### Changed
+- Homepage: **Team Star** is the first big button, above Team Members.
+- Star Shapes summary text uses the shared model's wording ("Notes:" and "Version").
+
 ## [0.7.1] - 2026-10-04
 
 ### Changed
@@ -145,7 +165,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.7.1...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/polarispixels/all-star-studio/compare/v0.7.1...v0.8.0
 [0.7.1]: https://github.com/polarispixels/all-star-studio/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/polarispixels/all-star-studio/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/polarispixels/all-star-studio/compare/v0.5.0...v0.6.0

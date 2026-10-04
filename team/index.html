@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Star · All-Star Studio</title>
+  <meta name="description" content="Choose the one star that represents the whole All-Stars team in the logo contest.">
+  <link rel="icon" href="../assets/star.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/designs.css">
+  <link rel="stylesheet" href="../css/shapes.css">
+  <link rel="stylesheet" href="../css/team.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a class="btn btn-quiet home" href="../">← Home</a>
+      <nav aria-label="Jump to">
+        <ul class="jump">
+          <li id="jump-send"><a href="#send">Send</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <img src="../assets/team/d-five.svg" alt="" width="96" height="96">
+      <div>
+        <h1>Team Star</h1>
+        <p>One star to represent the whole All-Stars team, for the contest due <strong>October 22</strong>. Each option is shown large and at the sizes people will really see it. Which should be our entry?</p>
+        <p class="status-line"><span id="progress"></span> <span id="save-status" role="status"></span></p>
+      </div>
+    </section>
+
+    <div id="version-banner" class="banner" hidden>
+      <p><strong>The options changed since your last visit,</strong> so this is a fresh start. Your earlier answers are saved separately.</p>
+      <div class="actions">
+        <button type="button" class="btn" id="download-old">Download earlier answers</button>
+        <button type="button" class="btn btn-quiet" id="start-fresh">Start fresh</button>
+      </div>
+      <p id="version-status" role="status"></p>
+    </div>
+
+    <noscript><p class="banner">This page needs JavaScript turned on to show the options.</p></noscript>
+
+    <div id="option-list" class="option-list"></div>
+
+    <section class="shape-more" aria-label="Other answers">
+      <div id="none-slot" class="tiles fav"></div>
+      <div id="other-slot"></div>
+    </section>
+
+    <section id="send" class="send" aria-labelledby="send-title">
+      <h2 id="send-title">Send to Ryan</h2>
+      <p class="privacy">Your answers stay in this browser. Copy or download the summary to share it with Ryan.</p>
+      <div class="actions send-actions">
+        <button type="button" class="btn btn-big" id="share" hidden>Share</button>
+        <button type="button" class="btn btn-big" id="copy">Copy</button>
+        <button type="button" class="btn btn-quiet" id="download-text">Download summary</button>
+        <button type="button" class="btn btn-quiet" id="download-json">Download data file (JSON)</button>
+      </div>
+      <p id="send-status" class="send-status" role="status" aria-live="polite"></p>
+      <details id="view-feedback">
+        <summary>View my answers</summary>
+        <pre id="summary" tabindex="0" aria-label="Answers summary"></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="btn btn-quiet" href="../">← Home</a>
+    <span class="version" data-app-version></span>
+  </footer>
+
+  <script type="module" src="../js/team/page.js"></script>
+  <script type="module" src="../js/version.js"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@ test('empty shape feedback exports nulls and blanks', () => {
 test('summary says Not answered for a skipped favorite and lists only real notes', () => {
   const text = shapeSummaryText(createEmptyShapeFeedback());
   assert.match(text, /Favorite shape: Not answered/);
-  assert.match(text, /Notes on shapes: Not answered/);
+  assert.match(text, /Notes: Not answered/);
   assert.match(text, /Anything else: Not answered/);
   const f = createEmptyShapeFeedback();
   f.favorite = 'plump';
