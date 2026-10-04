@@ -11,6 +11,17 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-10-04
+
+### Changed
+- Star Shapes are lettered **A–F** (badge on each card, "Shape D is my favorite" tiles, A–F jump links, and
+  letters in the summary, e.g. "Favorite shape: D. Plump"), so they're easy to name over the phone.
+
+### Fixed
+- The star in the "In a circle" avatar preview was about 4px right and down of center: the art was sized to
+  the circle's outer width and overflowed its 2px border. It now fills the inner circle and is centered
+  (a browser check verifies within 0.5px).
+
 ## [0.4.1] - 2026-10-04
 
 ### Added
@@ -84,7 +95,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.4.1...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.4.2...HEAD
+[0.4.2]: https://github.com/polarispixels/all-star-studio/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/polarispixels/all-star-studio/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/polarispixels/all-star-studio/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/polarispixels/all-star-studio/compare/v0.3.0...v0.3.1

@@ -22,10 +22,15 @@ test('summary says Not answered for a skipped favorite and lists only real notes
   f.comments.plump = 'A bit rounder';
   f.other = 'Love it';
   const t2 = shapeSummaryText(f);
-  assert.match(t2, /Favorite shape: Plump/);
-  assert.match(t2, /- Plump: A bit rounder/);
-  assert.doesNotMatch(t2, /- Classic:/);
+  assert.match(t2, /Favorite shape: D\. Plump/);
+  assert.match(t2, /- D\. Plump: A bit rounder/);
+  assert.doesNotMatch(t2, /Classic:/);
   assert.match(t2, /Anything else: Love it/);
+});
+
+test('shapes are lettered A, B, C ... in display order', () => {
+  assert.deepEqual(SHAPE_OPTIONS.map((s) => s.letter).join(''), 'ABCDEF'.slice(0, SHAPE_OPTIONS.length));
+  assert.equal(SHAPE_OPTIONS[0].id, 'classic');
 });
 
 test('"None of these yet" is a valid answer', () => {

@@ -14,7 +14,11 @@ const BLURBS = {
   blend: 'A shorter flat cut on each point, with gently rounded corners everywhere. A blend of squared-off and soft, made to match the heart.',
 };
 
-export const SHAPE_OPTIONS = SHAPES.map((s) => ({ id: s.id, name: s.name, blurb: BLURBS[s.id] }));
+// Letters follow display order (A, B, C, ...) so shapes are easy to name over the phone.
+export const SHAPE_OPTIONS = SHAPES.map((s, i) => ({
+  id: s.id, letter: String.fromCharCode(65 + i), name: s.name, blurb: BLURBS[s.id],
+}));
+export const shapeLabel = (s) => (s.letter ? `${s.letter}. ${s.name}` : s.name);
 export const NONE_OPTION = { id: 'none', name: 'None of these yet' };
 export const LIMITS = { comment: 500, other: 1000 };
 

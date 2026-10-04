@@ -68,13 +68,16 @@ try {
   ok(d().getElementById('summary').textContent.includes('Favorite shape: Not answered'), 'shapes: summary starts unanswered');
   click('input[name="favorite"][value="plump"]');
   const sc = d().getElementById('comment-plump'); sc.value = 'Rounder please'; sc.dispatchEvent(new Event('input', { bubbles: true }));
-  ok(d().getElementById('summary').textContent.includes('Favorite shape: Plump') && d().getElementById('summary').textContent.includes('Rounder please'), 'shapes: summary reflects pick and note');
+  ok(d().getElementById('summary').textContent.includes('Favorite shape: D. Plump') && d().getElementById('summary').textContent.includes('Rounder please'), 'shapes: summary reflects pick and note');
   await sleep(500);
   w().location.reload(); await loaded(); await sleep(900);
   ok(d().querySelector('input[name="favorite"][value="plump"]').checked && d().getElementById('comment-plump').value === 'Rounder please', 'shapes: pick and note survive reload');
   click('input[name="favorite"][value="none"]');
   ok(!d().querySelector('input[name="favorite"][value="plump"]').checked && d().getElementById('summary').textContent.includes('None of these yet'), 'shapes: "None of these yet" is one group with the cards');
   ok(getComputedStyle(d().getElementById('version-banner')).display === 'none', 'shapes: no version banner on normal visit');
+  ok([...d().querySelectorAll('.shape-letter')].map((e) => e.textContent).join('') === 'ABCDEF', 'shapes: cards lettered A-F');
+  const circ = d().querySelector('.circle'), cs = circ.querySelector('svg').getBoundingClientRect(), cr = circ.getBoundingClientRect();
+  ok(Math.abs((cs.left + cs.width / 2) - (cr.left + cr.width / 2)) < 0.5 && Math.abs((cs.top + cs.height / 2) - (cr.top + cr.height / 2)) < 0.5, 'shapes: star centered in circle (<0.5px)');
 } catch (e) { out.push('ERROR ' + e.stack); }
 document.getElementById('out').textContent = out.join('\n') + '\nDONE';
 </script>

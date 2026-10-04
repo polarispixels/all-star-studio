@@ -1,5 +1,5 @@
 // Star Shapes page: one card per shape (plain + Becky's kayak star + avatar sizes), favorite pick, notes, Send.
-import { SHAPE_OPTIONS, NONE_OPTION, LIMITS, plainPath, kayakPath } from './content.js';
+import { SHAPE_OPTIONS, NONE_OPTION, LIMITS, plainPath, kayakPath, shapeLabel } from './content.js';
 import { loadShapeFeedback, shapeSummaryText, shapeExportJson } from './feedback.js';
 import { $, el, artSlot, tile, textBox, createSaver, handleVersionChange, wireSend, loadRaw } from '../ui.js';
 
@@ -13,8 +13,12 @@ const save = createSaver(STORAGE_KEY, () => state);
 function changed() {
   save();
   $('#summary').textContent = shapeSummaryText(state);
-  const name = [...SHAPE_OPTIONS, NONE_OPTION].find((s) => s.id === state.favorite)?.name;
-  $('#progress').textContent = name ? `Your favorite: ${name}.` : 'No favorite picked yet.';
+  refreshProgress();
+}
+
+function refreshProgress() {
+  const fav = [...SHAPE_OPTIONS, NONE_OPTION].find((s) => s.id === state.favorite);
+  $('#progress').textContent = fav ? `Your favorite: ${shapeLabel(fav)}.` : 'No favorite picked yet.';
 }
 
 function favoriteTile(id, label) {
@@ -27,9 +31,14 @@ function favoriteTile(id, label) {
 
 function renderCards() {
   const host = $('#shape-list');
+  const jump = $('#jump-send');
+  for (const s of SHAPE_OPTIONS) {
+    jump.before(el('li', {}, el('a', { href: `#shape-${s.id}`, 'aria-label': `Shape ${s.letter}: ${s.name}`, text: s.letter })));
+  }
   for (const s of SHAPE_OPTIONS) {
     const card = el('article', { class: 'shape-card', id: `shape-${s.id}`, 'aria-labelledby': `shape-${s.id}-name` },
-      el('h2', { id: `shape-${s.id}-name`, text: s.name }),
+      el('h2', { id: `shape-${s.id}-name`, class: 'shape-title' },
+        el('span', { class: 'shape-letter', text: s.letter }), el('span', { text: s.name })),
       el('p', { class: 'rationale', text: s.blurb }),
       el('div', { class: 'shape-pair' },
         el('figure', {}, artSlot(plainPath(s.id), { decorative: true }), el('figcaption', { text: 'The shape' })),
@@ -43,7 +52,7 @@ function renderCards() {
           el('figure', {}, el('div', { class: 'circle' }, artSlot(kayakPath(s.id), { decorative: true, className: 'art art-96' })), el('figcaption', { text: 'In a circle' })),
         ),
       ),
-      el('div', { class: 'tiles fav' }, favoriteTile(s.id, 'This is my favorite shape')),
+      el('div', { class: 'tiles fav' }, favoriteTile(s.id, `Shape ${s.letter} is my favorite`)),
       textBox({
         id: `comment-${s.id}`,
         label: 'What would you change about this shape? (optional)',
@@ -75,6 +84,5 @@ handleVersionChange(loaded, {
   onStartFresh: changed,
 });
 $('#summary').textContent = shapeSummaryText(state);
-const favName = [...SHAPE_OPTIONS, NONE_OPTION].find((s) => s.id === state.favorite)?.name;
-$('#progress').textContent = favName ? `Your favorite: ${favName}.` : 'No favorite picked yet.';
+refreshProgress();
 $('#save-status').textContent = loaded.status === 'ok' ? 'Your earlier answers are back ✓' : '';

@@ -1,5 +1,5 @@
 // Pure feedback model for the Star Shapes page. No DOM access, so it runs under `node --test`.
-import { SHAPES_VERSION, SHAPE_OPTIONS, NONE_OPTION, LIMITS } from './content.js';
+import { SHAPES_VERSION, SHAPE_OPTIONS, NONE_OPTION, LIMITS, shapeLabel } from './content.js';
 
 export const SCHEMA_VERSION = 1;
 const NOT_ANSWERED = 'Not answered';
@@ -33,14 +33,17 @@ export const shapeExportJson = (f) => ({
   other: f.other,
 });
 
-const nameOf = (id) => [...SHAPE_OPTIONS, NONE_OPTION].find((s) => s.id === id)?.name;
+const nameOf = (id) => {
+  const s = [...SHAPE_OPTIONS, NONE_OPTION].find((x) => x.id === id);
+  return s ? shapeLabel(s) : undefined;
+};
 
 export function shapeSummaryText(f) {
   const lines = ['All-Star Studio: star shape feedback', `Shapes version ${SHAPES_VERSION}`, ''];
   lines.push(`Favorite shape: ${nameOf(f.favorite) ?? NOT_ANSWERED}`);
   const notes = SHAPE_OPTIONS.filter((s) => f.comments[s.id].trim());
   lines.push(`Notes on shapes: ${notes.length ? '' : NOT_ANSWERED}`.trimEnd());
-  for (const s of notes) lines.push(`- ${s.name}: ${f.comments[s.id].trim()}`);
+  for (const s of notes) lines.push(`- ${shapeLabel(s)}: ${f.comments[s.id].trim()}`);
   lines.push(`Anything else: ${f.other.trim() || NOT_ANSWERED}`);
   return lines.join('\n') + '\n';
 }
