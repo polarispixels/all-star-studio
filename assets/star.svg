@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="t d">
+  <title id="t">All-Star Studio star</title>
+  <desc id="d">A five-point star filled with colorful rays, stripes, and dots.</desc>
+  <defs>
+    <clipPath id="ass-clip"><polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8"/></clipPath>
+    <pattern id="ass-stripes" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="36" fill="#fff" fill-opacity=".35"/></pattern>
+    <pattern id="ass-dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="7" fill="#fff" fill-opacity=".4"/></pattern>
+  </defs>
+  <g clip-path="url(#ass-clip)">
+    <path d="M488 520L332 -366L796 -326Z" fill="#24558A"/>
+    <path d="M488 520L796 -326L1177 -59Z" fill="#F2B21A"/>
+    <path d="M488 520L796 -326L1177 -59Z" fill="url(#ass-stripes)"/>
+    <path d="M488 520L1177 -59L1374 364Z" fill="#E56B6F"/>
+    <path d="M488 520L1374 364L1334 828Z" fill="#8056A6"/>
+    <path d="M488 520L1374 364L1334 828Z" fill="url(#ass-dots)"/>
+    <path d="M488 520L1334 828L1067 1209Z" fill="#188C93"/>
+    <path d="M488 520L1067 1209L644 1406Z" fill="#4C9653"/>
+    <path d="M488 520L1067 1209L644 1406Z" fill="url(#ass-stripes)"/>
+    <path d="M488 520L644 1406L180 1366Z" fill="#24558A"/>
+    <path d="M488 520L180 1366L-201 1099Z" fill="#F2B21A"/>
+    <path d="M488 520L-201 1099L-398 676Z" fill="#E56B6F"/>
+    <path d="M488 520L-201 1099L-398 676Z" fill="url(#ass-dots)"/>
+    <path d="M488 520L-398 676L-358 212Z" fill="#8056A6"/>
+    <path d="M488 520L-358 212L-91 -169Z" fill="#188C93"/>
+    <path d="M488 520L-358 212L-91 -169Z" fill="url(#ass-stripes)"/>
+    <path d="M488 520L-91 -169L332 -366Z" fill="#4C9653"/>
+  </g>
+  <polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>
