@@ -12,6 +12,8 @@ The repo is `polarispixels/all-star-studio` (public). GitHub Pages builds from t
 
 All-Star Studio is a browser tool that generates five-point star artwork. Each region's color and pattern represents a user-defined concept. The first user is Ryan's mother, who is designing for a logo contest and isn't a designer. Use plain-language labels and show useful presets before she types anything.
 
+**Simplicity is a top priority.** Navigation should be big, obvious buttons with one- or two-word labels that Ryan can name over the phone ("click the Ideas button"). Use buttons, not inline text links, for anything she needs to find.
+
 ## Commands
 
 No build step, bundler, or package manager is needed to run the app.
