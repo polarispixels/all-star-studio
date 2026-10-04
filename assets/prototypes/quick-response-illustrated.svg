@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="quick-response-illustrated-title">
+  <title id="quick-response-illustrated-title">Quick Response: pictures and symbols</title>
+  <defs>
+    <clipPath id="quick-response-illustrated-clip">
+      <polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#quick-response-illustrated-clip)">
+    <rect x="0" y="0" width="1000" height="1000" fill="#2E2E3A"/>
+    <!-- flames -->
+    <path d="M318,495 C290,440 300,385 335,345 C340,385 356,405 382,415 C368,330 410,230 500,130 C492,225 535,270 568,312 C582,285 588,262 580,225 C660,300 705,400 682,495 Z" fill="#D7263D"/>
+    <path d="M362,495 C348,452 360,412 392,385 C398,415 414,432 436,438 C428,365 458,305 506,245 C512,318 556,350 572,395 C586,378 596,358 600,335 C638,392 650,452 638,495 Z" fill="#F46036"/>
+    <path d="M420,495 C408,455 428,415 462,388 C468,415 482,428 498,434 C500,400 518,365 545,338 C574,385 596,448 582,495 Z" fill="#FFC93C"/>
+    <!-- sparks -->
+    <path d="M270,250 L288,286 L270,322 L252,286 Z" fill="#FFC93C"/>
+    <path d="M720,215 L736,247 L720,279 L704,247 Z" fill="#F46036"/>
+    <circle cx="640" cy="150" r="13" fill="#FFC93C"/>
+    <circle cx="360" cy="200" r="11" fill="#F46036"/>
+    <!-- open lid, tipped back -->
+    <polygon points="575,486 712,486 760,392 628,412" fill="#1F5A35"/>
+    <!-- wheels -->
+    <circle cx="380" cy="668" r="30" fill="#1F5A35"/>
+    <circle cx="620" cy="668" r="30" fill="#1F5A35"/>
+    <circle cx="380" cy="668" r="11" fill="#2F7A4A"/>
+    <circle cx="620" cy="668" r="11" fill="#2F7A4A"/>
+    <!-- lift pockets -->
+    <rect x="270" y="532" width="50" height="36" rx="7" fill="#1F5A35"/>
+    <rect x="680" y="532" width="50" height="36" rx="7" fill="#1F5A35"/>
+    <!-- body -->
+    <polygon points="302,500 698,500 664,660 336,660" fill="#2F7A4A"/>
+    <!-- rim -->
+    <rect x="284" y="480" width="432" height="34" rx="9" fill="#1F5A35"/>
+    <!-- ribs -->
+    <polygon points="316,540 684,540 679,562 321,562" fill="#1F5A35"/>
+    <polygon points="333,620 667,620 662,642 338,642" fill="#1F5A35"/>
+    <!-- friendly face -->
+    <ellipse cx="452" cy="586" rx="11" ry="14" fill="#2E2E3A"/>
+    <ellipse cx="548" cy="586" rx="11" ry="14" fill="#2E2E3A"/>
+    <path d="M478,594 Q500,614 522,594" fill="none" stroke="#2E2E3A" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

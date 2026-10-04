@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="support-illustrated-title">
+  <title id="support-illustrated-title">Support and Care: pictures and symbols</title>
+  <defs>
+    <clipPath id="support-illustrated-clip">
+      <polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#support-illustrated-clip)">
+    <rect x="0" y="0" width="1000" height="1000" fill="#FFF3E6"/>
+    <polygon points="500,130.4 597.8,365.4 851.5,385.8 658.2,551.4 717.2,799 500,666.3 282.8,799 341.8,551.4 148.5,385.8 402.2,365.4" fill="#F9C6D6"/>
+    <g fill="#FFF3E6" opacity="0.5">
+      <polygon points="500,488 641.9,-197.5 788.1,-150"/>
+      <polygon points="500,488 1017.7,16.9 1108.1,141.2"/>
+      <polygon points="500,488 1195.8,411.2 1195.8,564.8"/>
+      <polygon points="500,488 1108.1,834.8 1017.7,959.1"/>
+      <polygon points="500,488 788.1,1126 641.9,1173.5"/>
+      <polygon points="500,488 358.1,1173.5 211.9,1126"/>
+      <polygon points="500,488 -17.7,959.1 -108.1,834.8"/>
+      <polygon points="500,488 -195.8,564.8 -195.8,411.2"/>
+      <polygon points="500,488 -108.1,141.2 -17.7,16.9"/>
+      <polygon points="500,488 211.9,-150 358.1,-197.5"/>
+    </g>
+    <polygon points="500,130.4 597.8,365.4 851.5,385.8 658.2,551.4 717.2,799 500,666.3 282.8,799 341.8,551.4 148.5,385.8 402.2,365.4" fill="none" stroke="#F28AAE" stroke-width="12" stroke-linejoin="round"/>
+    <g transform="translate(500 610) scale(0.82) translate(-500 -610)">
+    <g stroke-linejoin="round">
+      <polygon points="530.4,520.5 469.6,642.1 380.1,682.4 475,492.8" fill="#E0457B" stroke="#9E2A5B" stroke-width="22"/>
+      <path d="M500,512 L546.5,419 C613.6,284.8 596,282 500,282 C404,282 386.4,284.8 453.5,419 L466.9,445.8" fill="none" stroke="#9E2A5B" stroke-width="84"/>
+      <polygon points="530.4,520.5 469.6,642.1 380.1,682.4 475,492.8" fill="#E0457B"/>
+      <path d="M500,512 L546.5,419 C613.6,284.8 596,282 500,282 C404,282 386.4,284.8 453.5,419 L466.9,445.8" fill="none" stroke="#E0457B" stroke-width="62"/>
+      <path d="M500,512 L546.5,419 C574.7,362.6 587.9,329.5 586.7,309.9" fill="none" stroke="#C23468" stroke-width="62"/>
+      <polygon points="476.7,396.2 619.9,682.4 530.4,642.1 421.3,423.9" fill="#E0457B" stroke="#9E2A5B" stroke-width="22"/>
+      <path d="M435.6,383.2 L462.4,436.9" fill="none" stroke="#E0457B" stroke-width="62"/>
+      <polygon points="476.7,396.2 619.9,682.4 530.4,642.1 421.3,423.9" fill="#E0457B"/>
+    </g>
+    <g fill="none" stroke="#F28AAE" stroke-width="12" stroke-linecap="round">
+      <path d="M454.4,264.1 L448.6,264.6 L443,265.3 L437.7,266.1 L432.5,267.3 L427.4,268.6 L422.5,270.4 L417.7,272.6 L413,275.3 L408.6,278.6 L404.6,282.6 L401.1,287.2 L398.3,292.3 L396.3,297.6 L395,303.1 L394.3,308.7 L394.3,314.3 L394.6,320 L395.5,325.8 L396.7,331.8 L398.2,338 L400.1,344.4 L402.3,351.2 L404.9,358.2 L407.8,365.7"/>
+      <path d="M500.9,556.3 L550.1,654.7"/>
+    </g>
+    </g>
+  </g>
+  <polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

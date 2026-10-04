@@ -1,0 +1,64 @@
+<!doctype html><meta charset="utf-8"><title>Star Designs browser check</title>
+<!-- In-browser interaction check for designs/. Local only: it clears this origin's saved answers.
+     Run: serve the PARENT dir (python3 -m http.server 8765 from ..), then
+     chrome --headless=new --user-data-dir=<fresh> --virtual-time-budget=20000 --dump-dom http://localhost:8765/all-star-studio/tools/browser-check.html --><body><pre id="out">running</pre>
+<iframe id="f" src="../designs/" width="1000" height="800"></iframe>
+<script type="module">
+const out = [];
+if (!['localhost', '127.0.0.1'].includes(location.hostname)) { document.getElementById('out').textContent = 'Local use only: this check clears saved answers.'; throw new Error('local only'); }
+const ok = (cond, msg) => out.push(`${cond ? 'PASS' : 'FAIL'} ${msg}`);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const f = document.getElementById('f');
+const loaded = () => new Promise((r) => f.addEventListener('load', r, { once: true }));
+const w = () => f.contentWindow, d = () => f.contentDocument;
+const click = (sel) => { const e = d().querySelector(sel); e.click(); return e; };
+try {
+  localStorage.clear();
+  f.contentWindow.location.reload(); await loaded(); await sleep(800);
+  ok(d().querySelectorAll('.theme').length === 4, 'four theme sections');
+  ok(d().querySelectorAll('.card .art svg').length === 8, 'eight card SVGs inline');
+  const ids = [...d().querySelectorAll('[id]')].map((e) => e.id);
+  ok(new Set(ids).size === ids.length, 'all ids unique on page (incl. inline SVG copies)');
+  ok(d().getElementById('version-banner').hidden && getComputedStyle(d().getElementById('version-banner')).display === 'none', 'version banner hidden on first visit');
+  ok(getComputedStyle(d().querySelector('.follow-up')).display === 'none', 'follow-ups hidden initially');
+  ok(d().getElementById('summary').textContent.split('Not answered').length - 1 === 12, 'summary: 12 Not answered');
+  click('input[name="pref-support"][value="illustrated"]');
+  const c = d().getElementById('comment-support'); c.value = 'Bigger ribbon'; c.dispatchEvent(new Event('input', { bubbles: true }));
+  click('input[name="favorite_design"][value="outdoors-illustrated"]');
+  ok(!d().querySelector('#q-favorite_design .follow-up').hidden, 'outdoor follow-up shows for outdoor favorite');
+  click('input[name="fu-outdoor_recognizable"][value="kayaking"]');
+  click('input[name="fu-outdoor_recognizable"][value="skiing"]');
+  const most = d().querySelectorAll('#q-favorite_design .follow-up')[1];
+  ok(!most.hidden && most.querySelectorAll('input').length === 2, '"matters most" shows the 2 checked activities');
+  click('input[name="use_context"][value="contest"]');
+  ok(!d().getElementById('fu-contest_rules').closest('.follow-up').hidden, 'contest rules box shows');
+  ok(d().getElementById('progress').textContent.includes('1 of 4'), 'progress shows 1 of 4');
+  const sum = d().getElementById('summary').textContent;
+  ok(sum.includes('Support and Care: Pictures and symbols') && sum.includes('Bigger ribbon') && sum.includes('Kayaking, Skiing'), 'summary reflects choices');
+  await sleep(500);
+  ok(/Saved on this device/.test(d().getElementById('save-status').textContent), 'saved status shown');
+  w().location.reload(); await loaded(); await sleep(800);
+  ok(d().querySelector('input[name="pref-support"][value="illustrated"]').checked, 'theme choice survives reload');
+  ok(d().getElementById('comment-support').value === 'Bigger ribbon', 'comment survives reload');
+  ok(d().querySelector('input[name="fu-outdoor_most"]') !== null, 'follow-ups restored after reload');
+  const opener = d().querySelector('#phoenix-illustrated .btn');
+  opener.focus(); opener.click(); await sleep(400);
+  const dlg = d().getElementById('closer');
+  ok(dlg.open && dlg.querySelector('#closer-title').textContent.includes('Phoenix'), 'look closer opens with title');
+  d().getElementById('badge-toggle').click(); await sleep(300);
+  const small = d().querySelector('#closer-small svg');
+  ok(small && Math.round(small.getBoundingClientRect().width) <= 64 && d().getElementById('closer-large').hidden, 'badge preview at <=64px replaces large');
+  d().getElementById('closer-close').click(); await sleep(100);
+  ok(!dlg.open && d().activeElement === opener, 'dialog closes and focus returns to opener');
+  ok(getComputedStyle(d().getElementById('share')).display === 'none' || 'share' in w().navigator, 'share button hidden without Web Share');
+  localStorage.setItem('all-star-studio.prototype-feedback.v1', JSON.stringify({ prototypeVersion: '0.0.1', answers: { boundary: 'inside' } }));
+  w().location.reload(); await loaded(); await sleep(800);
+  ok(!d().getElementById('version-banner').hidden, 'banner shows on version mismatch');
+  ok(d().getElementById('summary').textContent.includes('Should the design stay inside the star?\n  Not answered'), 'old choices not applied after mismatch');
+  ok(localStorage.getItem('all-star-studio.prototype-feedback.v1.previous')?.includes('0.0.1'), 'old answers kept for export');
+  localStorage.setItem('all-star-studio.prototype-feedback.v1', '{bad json');
+  w().location.reload(); await loaded(); await sleep(800);
+  ok(d().querySelectorAll('.theme').length === 4, 'page still works with corrupt storage');
+} catch (e) { out.push('ERROR ' + e.stack); }
+document.getElementById('out').textContent = out.join('\n') + '\nDONE';
+</script>

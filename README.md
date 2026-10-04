@@ -5,7 +5,7 @@ Turn an idea into a star. A browser-based tool for designing five-point stars wh
 - App: https://polarispixels.github.io/all-star-studio/
 - Docs: https://polarispixels.github.io/all-star-studio/docs/
 
-Currently a coming-soon page. Releases follow [Semantic Versioning](https://semver.org/); see [CHANGELOG.md](CHANGELOG.md). See [docs/project-spec.md](docs/project-spec.md) for the full plan.
+Currently a preference-discovery prototype: the Star Designs page shows eight star designs and asks a few questions. Releases follow [Semantic Versioning](https://semver.org/); see [CHANGELOG.md](CHANGELOG.md). See [docs/project-spec.md](docs/project-spec.md) for the full plan.
 
 ## Local development
 

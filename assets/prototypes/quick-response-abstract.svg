@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="quick-response-abstract-title">
+  <title id="quick-response-abstract-title">Quick Response: colors and patterns</title>
+  <defs>
+    <clipPath id="quick-response-abstract-clip">
+      <polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#quick-response-abstract-clip)">
+    <rect x="0" y="0" width="1000" height="1000" fill="#D7263D"/>
+    <!-- flame front: rising sawtooth tongues -->
+    <polygon points="0,660 0,430 105,375 160,470 235,355 290,470 370,300 440,660" fill="#F46036"/>
+    <polygon points="1000,660 1000,430 895,375 840,470 765,355 710,470 630,300 560,660" fill="#F46036"/>
+    <polygon points="150,660 240,470 285,545 345,420 400,660" fill="#FFC93C"/>
+    <polygon points="850,660 760,470 715,545 655,420 600,660" fill="#FFC93C"/>
+    <!-- central spike -->
+    <polygon points="306,660 694,660 500,-20" fill="#D7263D"/>
+    <polygon points="340,660 660,660 500,40" fill="#F46036"/>
+    <polygon points="400,660 600,660 500,170" fill="#FFC93C"/>
+    <!-- upward chevrons -->
+    <polygon points="450,330 500,270 550,330 550,380 500,320 450,380" fill="#D7263D"/>
+    <polygon points="440,440 500,370 560,440 560,495 500,425 440,495" fill="#D7263D"/>
+    <polygon points="430,555 500,475 570,555 570,615 500,535 430,615" fill="#D7263D"/>
+    <!-- grounded base -->
+    <rect x="0" y="648" width="1000" height="26" fill="#2F7A4A"/>
+    <rect x="0" y="674" width="1000" height="400" fill="#2E2E3A"/>
+  </g>
+  <polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="outdoors-abstract-title">
+  <title id="outdoors-abstract-title">Outdoor All-Star: colors and patterns</title>
+  <defs>
+    <clipPath id="outdoors-abstract-clip"><polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8"/></clipPath>
+    <pattern id="outdoors-abstract-ripple" width="125" height="44" patternUnits="userSpaceOnUse">
+      <rect width="125" height="44" fill="#247BA0"/>
+      <path d="M-62.5,30 q31.25,-18 62.5,0 t62.5,0 t62.5,0 t62.5,0" fill="none" stroke="#9ED0EA" stroke-width="9" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <g clip-path="url(#outdoors-abstract-clip)">
+    <rect width="1000" height="1000" fill="#9ED0EA"/>
+    <polygon points="500,200 430,0 570,0" fill="#F4C95D"/>
+    <polygon points="20,330 250,345 20,500" fill="#F7F7F2"/>
+    <polygon points="980,330 740,345 980,500" fill="#F4C95D"/>
+    <polygon points="230,320 -40,600 120,600" fill="#74A84A"/>
+    <polygon points="230,320 120,600 300,600" fill="#2D6A4F"/>
+    <polygon points="230,320 300,600 500,600" fill="#74A84A"/>
+    <polygon points="230,320 176,376 206,362 232,392 258,364 284,378" fill="#F7F7F2"/>
+    <polygon points="770,310 500,600 680,600" fill="#2D6A4F"/>
+    <polygon points="770,310 680,600 870,600" fill="#74A84A"/>
+    <polygon points="770,310 870,600 1040,600" fill="#2D6A4F"/>
+    <polygon points="770,310 716,368 746,354 772,384 798,356 826,370" fill="#F7F7F2"/>
+    <polygon points="500,200 200,600 380,600" fill="#74A84A"/>
+    <polygon points="500,200 380,600 520,600" fill="#2D6A4F"/>
+    <polygon points="500,200 520,600 650,600" fill="#74A84A"/>
+    <polygon points="500,200 650,600 800,600" fill="#2D6A4F"/>
+    <polygon points="500,200 410,320 448,298 480,340 512,300 552,330 590,320" fill="#F7F7F2"/>
+    <path d="M-30,575 q31.25,-18 62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 V1000 H-30 Z" fill="#247BA0"/>
+    <path d="M-92.5,625 q31.25,-18 62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 V1000 H-92.5 Z" fill="#9ED0EA"/>
+    <path d="M-30,668 q31.25,-18 62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 V1000 H-30 Z" fill="#F4C95D"/>
+    <path d="M-92.5,690 q31.25,-18 62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 V1000 H-92.5 Z" fill="url(#outdoors-abstract-ripple)"/>
+    <path d="M-30,790 q31.25,-18 62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 t62.5,0 V1000 H-30 Z" fill="#1A5674"/>
+  </g>
+  <polygon points="500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

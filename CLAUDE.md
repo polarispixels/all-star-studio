@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Status
 
-A coming-soon page is live; the app itself isn't built yet. The authoritative specification is `docs/project-spec.md` (v1.0, 2026-10-04). Read the relevant section before building a feature. Follow the milestone order in spec §15: the rendering engine comes first, and language interpretation waits until clean stars can be generated.
+The live site is a homepage plus the Star Designs prototype gallery (`designs/`, v0.3.0, brief in `docs/prototype-iteration-brief.md`); the full star maker isn't built yet. The authoritative specification is `docs/project-spec.md` (v1.0, 2026-10-04). Read the relevant section before building a feature. Follow the milestone order in spec §15: the rendering engine comes first, and language interpretation waits until clean stars can be generated.
 
 The repo is `polarispixels/all-star-studio` (public). GitHub Pages builds from the `main` branch root, so **every push to `main` deploys to the live URL that Ryan's mother has bookmarked**. Keep `main` working and don't remove the entry page.
 
@@ -26,7 +26,13 @@ python3 -m http.server 8000   # then open http://localhost:8000/ (ES modules fai
 node --test 'tests/*.test.mjs'              # whole suite (Node's built-in runner, no npm deps)
 node --test tests/version.test.mjs          # one file
 node --test --test-name-pattern='docs badge' 'tests/*.test.mjs'   # one test by name
+node tests/check-svgs.mjs                    # validate prototype SVGs (also part of the suite)
+tools/svg-preview.sh out.png a.svg b.svg     # screenshot SVGs large + at 64px (Windows Chrome via WSL)
 ```
+
+Screenshots use Windows Chrome headless, whose window is at least about 500px wide. To check phone width, put the page in a 360px `<iframe>`. For the in-browser interaction check, serve the **parent** directory and dump-dom `tools/browser-check.html` (local only; it clears saved answers). Pages that use `hidden` need the global `[hidden] { display: none !important; }` rule, because component `display` rules override it.
+
+**Star Designs gallery:** content and questions live in `js/designs/content.js` (bump `PROTOTYPE_VERSION` when artwork or choices change meaning). Pure feedback logic is in `feedback.js`, storage in `store.js`, and DOM code in `page.js`. Inline SVG copies get per-instance id prefixes; downloads send the unmodified file.
 
 ## Versioning (SemVer)
 
