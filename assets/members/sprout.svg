@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="sprout-title">
+  <title id="sprout-title">Sprout All-Star star: helping others grow</title>
+  <defs>
+    <clipPath id="sprout-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath>
+  </defs>
+  <g clip-path="url(#sprout-clip)">
+    <rect width="1000" height="1000" fill="#CFEFE6"/>
+    <circle cx="500" cy="250" r="150" fill="#FFD45C" opacity="0.35"/>
+    <circle cx="500" cy="250" r="100" fill="#FFD45C"/>
+    <path d="M0,500 Q150,430 300,490 Q420,540 500,550 Q640,550 740,470 Q860,410 1000,460 L1000,1000 L0,1000 Z" fill="#A7D676"/>
+    <path d="M150,470 C190,420 260,420 290,450 C250,500 190,505 150,470 Z" fill="#4CAF50"/><path d="M162,470 Q220,452 280,452" fill="none" stroke="#2E7D4F" stroke-width="7" stroke-linecap="round"/>
+    <path d="M850,460 C810,410 740,410 710,440 C750,490 810,495 850,460 Z" fill="#4CAF50"/><path d="M838,460 Q780,442 720,442" fill="none" stroke="#2E7D4F" stroke-width="7" stroke-linecap="round"/>
+    <path d="M0,640 Q180,560 360,620 Q500,670 640,620 Q820,560 1000,640 L1000,1000 L0,1000 Z" fill="#4CAF50"/>
+    <path d="M0,750 Q200,690 380,740 L620,740 Q800,690 1000,750 L1000,1000 L0,1000 Z" fill="#2E7D4F"/>
+    <path d="M290,880 L410,680" fill="none" stroke="#243447" stroke-width="96" stroke-linecap="round"/>
+    <path d="M290,880 L410,680" fill="none" stroke="#F2C29B" stroke-width="76" stroke-linecap="round"/>
+    <path d="M710,880 L590,680" fill="none" stroke="#243447" stroke-width="96" stroke-linecap="round"/>
+    <path d="M710,880 L590,680" fill="none" stroke="#F2C29B" stroke-width="76" stroke-linecap="round"/>
+    <path d="M356,604 Q344,694 440,704 L560,704 Q656,694 644,604 Q604,650 500,656 Q396,650 356,604 Z" fill="#F2C29B" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M424,556 L576,556 L556,666 Q500,678 444,666 Z" fill="#D0794A" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+    <rect x="402" y="510" width="196" height="50" rx="12" fill="#D0794A" stroke="#243447" stroke-width="10"/>
+    <ellipse cx="500" cy="512" rx="90" ry="15" fill="#7A4E2D" stroke="#243447" stroke-width="8"/>
+    <path d="M356,604 Q364,572 390,578 Q408,608 418,650" fill="#F2C29B" stroke="#243447" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M644,604 Q636,572 610,578 Q592,608 582,650" fill="#F2C29B" stroke="#243447" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M500,510 C494,460 514,420 500,350" fill="none" stroke="#243447" stroke-width="34" stroke-linecap="round"/>
+    <path d="M500,510 C494,460 514,420 500,350" fill="none" stroke="#2E7D4F" stroke-width="16" stroke-linecap="round"/>
+    <path d="M498,440 C420,476 316,452 288,384 C380,348 474,368 498,440 Z" fill="#4CAF50" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M490,432 Q400,390 304,386" fill="none" stroke="#2E7D4F" stroke-width="8" stroke-linecap="round"/>
+    <path d="M336,380 Q376,364 420,372" fill="none" stroke="#A7D676" stroke-width="10" stroke-linecap="round"/>
+    <path d="M502,418 C580,454 686,430 714,364 C620,330 528,348 502,418 Z" fill="#4CAF50" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M510,410 Q600,370 698,366" fill="none" stroke="#2E7D4F" stroke-width="8" stroke-linecap="round"/>
+    <path d="M592,356 Q636,346 676,352" fill="none" stroke="#A7D676" stroke-width="10" stroke-linecap="round"/>
+    <path d="M500,404 C460,362 466,300 514,262 C550,306 542,364 500,404 Z" fill="#A7D676" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M502,392 Q506,332 512,284" fill="none" stroke="#4CAF50" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

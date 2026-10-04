@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="carousel-title">
+<title id="carousel-title">Carousel All-Star star: carousel horse</title>
+<defs><clipPath id="carousel-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath></defs>
+<g clip-path="url(#carousel-clip)">
+<rect width="1000" height="1000" fill="#6B3E75"/>
+<g fill="#E9B949" stroke="#243447" stroke-width="5" stroke-linejoin="round"><path d="M220,360 Q226,398 260,404 Q226,410 220,448 Q214,410 180,404 Q214,398 220,360 Z"/><path d="M790,370 Q795,400 822,404 Q795,408 790,438 Q785,408 758,404 Q785,400 790,370 Z"/></g>
+<rect y="728" width="1000" height="300" fill="#7FD1B9"/>
+<rect y="722" width="1000" height="16" fill="#E9B949" stroke="#243447" stroke-width="7"/>
+<path d="M500,100 L380,250 H620 Z" fill="#FFF6E6"/>
+<path d="M500,100 L380,250 H420 Z M500,100 L460,250 H500 Z M500,100 L540,250 H580 Z" fill="#D94B4B"/>
+<path d="M370,236 H630 V256 A26,26 0 0 1 578,256 A26,26 0 0 1 526,256 A26,26 0 0 1 474,256 A26,26 0 0 1 422,256 A26,26 0 0 1 370,256 Z" fill="#D94B4B" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
+<rect x="370" y="226" width="260" height="24" fill="#E9B949" stroke="#243447" stroke-width="8"/>
+<g fill="#FFF6E6" stroke="#243447" stroke-width="4"><circle cx="422" cy="238" r="7"/><circle cx="461" cy="238" r="7"/><circle cx="539" cy="238" r="7"/><circle cx="578" cy="238" r="7"/></g>
+<rect x="486" y="250" width="28" height="500" fill="#E9B949" stroke="#243447" stroke-width="8"/>
+<path d="M495,262 V740" stroke="#FFF6E6" stroke-width="5" stroke-linecap="round"/>
+<g transform="translate(500,520) scale(1.08) translate(-503,-500)">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M462,540 L448,606 L452,656 M578,548 L582,656" stroke="#243447" stroke-width="42"/>
+<path d="M462,540 L448,606 L452,656 M578,548 L582,656" stroke="#F0DCC0" stroke-width="26"/>
+</g>
+<path d="M376,488 C330,482 302,520 314,568 C320,598 306,622 296,640 C334,636 352,608 354,580 C358,616 346,644 338,662 C384,648 394,600 382,560 C376,530 382,506 396,496 Z" fill="#8CC8E8" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M436,520 L416,600" stroke="#243447" stroke-width="64"/>
+<path d="M616,520 L664,560" stroke="#243447" stroke-width="56"/>
+<path d="M430,540 L412,604 L424,656 M612,535 L668,565 L650,616" stroke="#243447" stroke-width="42"/>
+<path d="M436,520 L416,600" stroke="#FFF6E6" stroke-width="48"/>
+<path d="M616,520 L664,560" stroke="#FFF6E6" stroke-width="40"/>
+<path d="M430,540 L412,604 L424,656 M612,535 L668,565 L650,616" stroke="#FFF6E6" stroke-width="26"/>
+</g>
+<g fill="#E9B949" stroke="#243447" stroke-width="7" stroke-linejoin="round">
+<path d="M404,656 H444 L446,676 H402 Z"/><path d="M432,656 H472 L474,676 H430 Z"/><path d="M562,656 H602 L604,676 H560 Z"/>
+<path d="M634,612 L664,620 L656,642 L626,634 Z"/>
+</g>
+<path d="M640,375 C665,380 690,395 705,410 L728,438 C736,450 730,468 716,470 C700,472 684,466 670,458 L650,450 C642,472 652,490 648,510 C645,535 628,552 605,557 C560,570 470,570 425,557 C380,550 360,520 370,490 C380,465 420,458 450,462 C500,468 535,470 555,466 C572,428 600,392 640,375 Z" fill="#FFF6E6" stroke="#243447" stroke-width="9" stroke-linejoin="round"/>
+<path d="M626,384 L634,342 L656,376 Z" fill="#FFF6E6" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
+<path d="M645,368 C612,375 592,400 582,432 C574,456 560,466 540,474 C556,484 580,478 590,463 C588,482 574,496 558,502 C590,506 606,482 608,460 C610,432 622,410 642,396 C654,386 656,372 645,368 Z" fill="#8CC8E8" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
+<path d="M645,372 C665,372 674,386 668,402 C662,392 652,388 643,390 Z" fill="#8CC8E8" stroke="#243447" stroke-width="6" stroke-linejoin="round"/>
+<path d="M566,500 C600,518 630,516 650,498" fill="none" stroke="#D94B4B" stroke-width="11" stroke-linecap="round"/>
+<g fill="#E9B949" stroke="#243447" stroke-width="4"><circle cx="590" cy="512" r="6"/><circle cx="618" cy="514" r="6"/></g>
+<path d="M454,468 C482,476 538,476 562,466 L572,516 L558,530 L544,520 L530,534 L516,522 L500,536 L486,522 L472,534 L460,520 L446,526 Z" fill="#D94B4B" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
+<path d="M450,510 C480,520 540,520 570,506" fill="none" stroke="#E9B949" stroke-width="8"/>
+<path d="M462,452 C470,470 535,472 556,452 C562,446 572,448 570,460 C560,490 470,492 452,462 C448,452 456,446 462,452 Z" fill="#7FD1B9" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
+<path d="M648,384 L680,456 L700,466 M710,428 L698,466" fill="none" stroke="#D94B4B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M700,464 C670,470 640,452 600,458 C585,460 572,464 566,466" fill="none" stroke="#D94B4B" stroke-width="8" stroke-linecap="round"/>
+<circle cx="666" cy="424" r="9" fill="#E9B949" stroke="#243447" stroke-width="5"/>
+<circle cx="684" cy="408" r="8" fill="#243447"/>
+<circle cx="719" cy="451" r="4" fill="#243447"/>
+<rect x="481" y="440" width="44" height="14" rx="4" fill="#E9B949" stroke="#243447" stroke-width="6"/>
+<rect x="481" y="556" width="44" height="14" rx="4" fill="#E9B949" stroke="#243447" stroke-width="6"/>
+</g>
+</g>
+<path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

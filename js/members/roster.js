@@ -7,6 +7,9 @@ export const ROSTER = [
   { id: 'detective', name: 'Detective', blurb: 'All-Star detective at your service: always investigating.', starVersion: 1 },
   { id: 'quick-response', name: 'Quick Response', blurb: 'A cheerful dumpster fire for lightning-fast answers, now with turquoise.', starVersion: 1, placeholder: true },
   { id: 'support', name: 'Support and Care', blurb: 'A pink awareness ribbon at the heart of the star.', starVersion: 1, placeholder: true },
+  { id: 'carousel', name: 'Carousel', blurb: 'A prancing carousel horse: round and round, lifting everyone up together.', starVersion: 1, placeholder: true },
+  { id: 'lighthouse', name: 'Lighthouse', blurb: 'A guiding light that helps others find their way.', starVersion: 1, placeholder: true },
+  { id: 'sprout', name: 'Sprout', blurb: 'A young sprout: helping others grow.', starVersion: 1, placeholder: true },
 ];
 
 export const NEW_ID = 'new';

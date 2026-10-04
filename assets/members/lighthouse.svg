@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="lighthouse-title">
+  <title id="lighthouse-title">Lighthouse All-Star star: a guiding light</title>
+  <defs>
+    <clipPath id="lighthouse-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath>
+  </defs>
+  <g clip-path="url(#lighthouse-clip)">
+    <rect width="1000" height="1000" fill="#24395C"/>
+    <path d="M0,520 Q250,495 500,508 T1000,505 L1000,1000 L0,1000 Z" fill="#3E5F8A"/>
+    <circle cx="468" cy="200" r="6" fill="#FFF0B8"/><circle cx="538" cy="216" r="5" fill="#FFF0B8"/><circle cx="503" cy="158" r="4.5" fill="#FFF0B8"/><circle cx="244" cy="470" r="4" fill="#FFF0B8"/><circle cx="760" cy="476" r="4" fill="#FFF0B8"/>
+    <polygon points="500,322 -191.4,212.5 -199,358.6" fill="#FFD66B"/>
+    <polygon points="500,322 -191.4,431.5 -161.9,549.9" fill="#FFF0B8"/>
+    <polygon points="500,322 -134.4,617.8 -73.4,723.5" fill="#FFD66B"/>
+    <polygon points="500,322 -149,59.8 -176.1,140.8" fill="#FFF0B8"/>
+    <polygon points="500,322 1191.4,212.5 1199,358.6" fill="#FFD66B"/>
+    <polygon points="500,322 1191.4,431.5 1161.9,549.9" fill="#FFF0B8"/>
+    <polygon points="500,322 1134.4,617.8 1073.4,723.5" fill="#FFD66B"/>
+    <polygon points="500,322 1149,59.8 1176.1,140.8" fill="#FFF0B8"/>
+    <circle cx="500" cy="322" r="82" fill="#FFF0B8"/>
+    <circle cx="500" cy="322" r="62" fill="#FFD66B"/>
+    <path d="M0,600 Q90,585 180,600 T360,600 T540,600 T720,600 T900,600 T1080,600 L1000,1000 L0,1000 Z" fill="#1F7A8C"/>
+    <path d="M0,690 Q80,672 160,690 T320,690 T480,690 T640,690 T800,690 T960,690 T1120,690 L1000,1000 L0,1000 Z" fill="#17606E"/>
+    <path d="M0,770 Q80,752 160,770 T320,770 T480,770 T640,770 T800,770 T960,770 T1120,770 L1000,1000 L0,1000 Z" fill="#1F7A8C"/>
+    <path d="M270,640 Q300,628 330,640 M640,630 Q670,618 700,630 M300,730 Q330,718 360,730 M650,745 Q680,733 710,745" fill="none" stroke="#FFF0B8" stroke-width="9" stroke-linecap="round"/>
+    <path d="M360,712 L388,664 L430,650 L470,668 L530,668 L572,648 L616,662 L644,712 Z" fill="#5B6470" stroke="#243447" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M410,690 L440,676 M560,684 L592,672" fill="none" stroke="#243447" stroke-width="7" stroke-linecap="round"/>
+    <polygon points="460,392 540,392 546.8,449.6 453.2,449.6" fill="#D64545"/>
+    <polygon points="453.2,449.6 546.8,449.6 553.6,507.2 446.4,507.2" fill="#FFFFFF"/>
+    <polygon points="446.4,507.2 553.6,507.2 560.4,564.8 439.6,564.8" fill="#D64545"/>
+    <polygon points="439.6,564.8 560.4,564.8 567.2,622.4 432.8,622.4" fill="#FFFFFF"/>
+    <polygon points="432.8,622.4 567.2,622.4 574,680 426,680" fill="#D64545"/>
+    <polygon points="460,392 540,392 574,680 426,680" fill="none" stroke="#243447" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M482,680 L482,642 A18,18 0 0 1 518,642 L518,680 Z" fill="#243447"/>
+    <rect x="489" y="462.4" width="22" height="32" rx="11" fill="#243447"/><rect x="491" y="579.6" width="18" height="28" rx="9" fill="#243447"/>
+    <rect x="440" y="372" width="120" height="22" rx="4" fill="#243447"/>
+    <rect x="452" y="344" width="96" height="30" fill="none" stroke="#243447" stroke-width="7"/>
+    <path d="M476,344 L476,374 M500,344 L500,374 M524,344 L524,374" stroke="#243447" stroke-width="6"/>
+    <rect x="466" y="292" width="68" height="54" fill="#FFD66B" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
+    <circle cx="500" cy="320" r="17" fill="#FFFFFF"/>
+    <path d="M489,292 L489,346 M511,292 L511,346" stroke="#243447" stroke-width="5"/>
+    <path d="M450,294 L550,294 L500,248 Z" fill="#D64545" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
+    <circle cx="500" cy="242" r="10" fill="#D64545" stroke="#243447" stroke-width="6"/>
+  </g>
+  <path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

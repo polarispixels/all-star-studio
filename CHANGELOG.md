@@ -11,6 +11,17 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-10-04
+
+### Added
+- Three new placeholder member stars, on house shape B, waiting for teammates to claim them:
+  - **Carousel:** a prancing carousel horse on a gold pole under a striped canopy (requested by Ryan; name is a
+    placeholder).
+  - **Lighthouse:** a striped lighthouse with beams fanning across the arms, a guiding light for mentors
+    (inspired by the "rays from a center" heart style).
+  - **Sprout:** a seedling in a pot held by cupped hands, for helping others grow (inspired by the Green Team and
+    Mental Well-Being hearts).
+
 ## [0.6.0] - 2026-10-04
 
 ### Added
@@ -127,7 +138,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/polarispixels/all-star-studio/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/polarispixels/all-star-studio/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/polarispixels/all-star-studio/compare/v0.4.2...v0.5.0
 [0.4.2]: https://github.com/polarispixels/all-star-studio/compare/v0.4.1...v0.4.2

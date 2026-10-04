@@ -81,8 +81,8 @@ try {
   // ---- Team Members ----
   f.src = '../members/'; await loaded(); await sleep(900);
   const cards = d().querySelectorAll('.member-card');
-  ok(cards.length === 6, 'members: 5 member cards + "Want your own star?"');
-  ok(cards[0].getAttribute('href') === '../member/?id=becky' && d().querySelectorAll('.member-card svg').length === 5, 'members: cards link to member pages and show stars');
+  ok(cards.length === 9, 'members: 8 member cards + "Want your own star?"');
+  ok(cards[0].getAttribute('href') === '../member/?id=becky' && d().querySelectorAll('.member-card svg').length === 8, 'members: cards link to member pages and show stars');
   f.src = '../member/?id=becky'; await loaded(); await sleep(900);
   ok(d().querySelector('h1').textContent === "Becky's star" && d().querySelectorAll('svg').length === 4, 'member: Becky page shows hero + 3 avatar previews');
   const mc = d().querySelector('.circle'), ms = mc.querySelector('svg').getBoundingClientRect(), mr = mc.getBoundingClientRect();
