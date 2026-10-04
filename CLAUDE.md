@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Status
 
-The live site is a homepage plus the Star Designs prototype gallery (`designs/`, v0.3.0, brief in `docs/prototype-iteration-brief.md`); the full star maker isn't built yet. The authoritative specification is `docs/project-spec.md` (v1.0, 2026-10-04). Read the relevant section before building a feature. Follow the milestone order in spec §15: the rendering engine comes first, and language interpretation waits until clean stars can be generated.
+The live site is a homepage plus the Star Designs prototype gallery (`designs/`, brief in `docs/prototype-iteration-brief.md`); the full star maker isn't built yet. **`docs/index.html` is the current-state page** (what's live, releases, user feedback, open decisions). Read it first, and keep it current. The authoritative specification is `docs/project-spec.md` (v1.0, 2026-10-04). Read the relevant section before building a feature. Follow the milestone order in spec §15: the rendering engine comes first, and language interpretation waits until clean stars can be generated.
 
 The repo is `polarispixels/all-star-studio` (public). GitHub Pages builds from the `main` branch root, so **every push to `main` deploys to the live URL that Ryan's mother has bookmarked**. Keep `main` working and don't remove the entry page.
 
@@ -41,7 +41,7 @@ Screenshots use Windows Chrome headless, whose window is at least about 500px wi
 Every release:
 1. Bump `APP_VERSION`.
 2. Move `[Unreleased]` items in `CHANGELOG.md` into a `## [x.y.z] - YYYY-MM-DD` entry and add its compare link.
-3. Update the `data-docs-version` badge in `docs/index.html`.
+3. Update `docs/index.html`: the `data-docs-version` badge, the "Recent releases" row, and any status, feedback, or open-decision text that changed. Other agents read this page to learn the current state.
 4. Commit, run `git tag vX.Y.Z`, then `git push && git push --tags`.
 
 `tests/version.test.mjs` fails if those three disagree. `schemaVersion`, `rendererVersion` and `prototypeVersion` version data formats, not releases, so bump them only when their format changes.

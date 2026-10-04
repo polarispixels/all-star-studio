@@ -11,6 +11,14 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-10-04
+
+### Changed
+- Docs page rewritten as a current-state page for people and agents: what is live, recent releases,
+  feedback from the v0.3.0 review, open decisions, a document index with statuses, and development notes.
+- `docs/project-spec.md` gets a status note: long-term direction, not yet built.
+- Release checklist now includes updating the docs page; a test checks that every release is listed there.
+
 ## [0.3.0] - 2026-10-04
 
 ### Added
@@ -53,7 +61,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/polarispixels/all-star-studio/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/polarispixels/all-star-studio/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/polarispixels/all-star-studio/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/polarispixels/all-star-studio/compare/v0.2.0...v0.2.1

@@ -32,3 +32,9 @@ test('homepage loads the version stamp', () => {
   assert.ok(html.includes('data-app-version'));
   assert.ok(html.includes('./js/version.js'));
 });
+
+test('docs page lists every released version', () => {
+  const docs = read('docs/index.html');
+  const versions = [...read('CHANGELOG.md').matchAll(/^## \[(\d+\.\d+\.\d+)\]/gm)].map((m) => m[1]);
+  for (const v of versions) assert.ok(docs.includes(`<td>v${v}</td>`), `docs/index.html is missing release v${v}`);
+});

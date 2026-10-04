@@ -1,5 +1,10 @@
 # All-Star Studio
 
+> **Status (2026-10-04, v0.3.1):** This is the long-term direction for the full star maker. None of it is built yet.
+> The live site is a homepage, the Star Designs preference prototype, and a Heart Examples reference page.
+> Narrower iteration briefs take precedence where they differ. The repository and GitHub Pages deployment were later
+> authorized and exist. For the current state, read [the docs page](https://polarispixels.github.io/all-star-studio/docs/).
+
 Project specification, version 1.0, October 4, 2026
 
 **Tagline:** Turn an idea into a star.
