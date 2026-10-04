@@ -8,6 +8,8 @@ A coming-soon page is live; the app itself isn't built yet. The authoritative sp
 
 The repo is `polarispixels/all-star-studio` (public). GitHub Pages builds from the `main` branch root, so **every push to `main` deploys to the live URL that Ryan's mother has bookmarked**. Keep `main` working and don't remove the entry page.
 
+`ideas/` is a brainstorming page that shows CVS Health's heart pin photos (from their public merch store) under a red disclaimer banner. Those images are reference only. Never copy them, or derive artwork from them, into the app or `assets/`. The spec's "no CDN/third-party assets" rule applies to the app, and `ideas/` follows it too: its images are stored locally.
+
 All-Star Studio is a browser tool that generates five-point star artwork. Each region's color and pattern represents a user-defined concept. The first user is Ryan's mother, who is designing for a logo contest and isn't a designer. Use plain-language labels and show useful presets before she types anything.
 
 ## Commands
