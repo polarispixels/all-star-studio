@@ -24,6 +24,12 @@ for (const m of ROSTER) {
   });
 }
 
+test('renamed members keep their old links', () => {
+  assert.equal(findMember('quick-response')?.id, 'dixie');
+  const all = ROSTER.flatMap((m) => [m.id, ...(m.aliases ?? [])]);
+  assert.equal(new Set(all).size, all.length, 'ids and aliases must not collide');
+});
+
 test('change request names the member, star version, and request', () => {
   const text = changeRequestText(findMember('becky'), '  Make the lake turquoise  ');
   assert.equal(text, 'All-Star Studio: star change request\nFor: Becky\nStar: becky (version 1)\n\nRequest:\nMake the lake turquoise\n');

@@ -11,6 +11,13 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-10-04
+
+### Changed
+- The Quick Response placeholder belongs to **Dixie**. The card and page now show her name, and the star moved to
+  `assets/members/dixie.svg` with the page at `member/?id=dixie`. Old `?id=quick-response` links still work
+  (roster `aliases`).
+
 ## [0.7.0] - 2026-10-04
 
 ### Added
@@ -138,7 +145,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/polarispixels/all-star-studio/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/polarispixels/all-star-studio/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/polarispixels/all-star-studio/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/polarispixels/all-star-studio/compare/v0.4.2...v0.5.0

@@ -5,7 +5,7 @@ export const ROSTER = [
   { id: 'becky', name: 'Becky', blurb: 'Mountains, evergreens and a kayak on the lake.', starVersion: 1 },
   { id: 'scott', name: 'Scott', blurb: 'A phoenix rising, wings raised.', starVersion: 1 },
   { id: 'detective', name: 'Detective', blurb: 'All-Star detective at your service: always investigating.', starVersion: 1 },
-  { id: 'quick-response', name: 'Quick Response', blurb: 'A cheerful dumpster fire for lightning-fast answers, now with turquoise.', starVersion: 1, placeholder: true },
+  { id: 'dixie', name: 'Dixie', blurb: 'A cheerful dumpster fire for lightning-fast answers, with a splash of turquoise.', starVersion: 1, aliases: ['quick-response'] },
   { id: 'support', name: 'Support and Care', blurb: 'A pink awareness ribbon at the heart of the star.', starVersion: 1, placeholder: true },
   { id: 'carousel', name: 'Carousel', blurb: 'A prancing carousel horse: round and round, lifting everyone up together.', starVersion: 1, placeholder: true },
   { id: 'lighthouse', name: 'Lighthouse', blurb: 'A guiding light that helps others find their way.', starVersion: 1, placeholder: true },
@@ -13,5 +13,6 @@ export const ROSTER = [
 ];
 
 export const NEW_ID = 'new';
-export const findMember = (id) => ROSTER.find((m) => m.id === id) ?? null;
+// `aliases` keep old links working after a placeholder is renamed (e.g. quick-response -> dixie).
+export const findMember = (id) => ROSTER.find((m) => m.id === id || m.aliases?.includes(id)) ?? null;
 export const memberStarPath = (id, prefix = '../') => `${prefix}assets/members/${id}.svg`;
