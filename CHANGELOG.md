@@ -11,12 +11,10 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
-### Added
-- Design spec for the Star Designs gallery and preference questions, plus the iteration brief, in `docs/`.
-
 ## [0.2.2] - 2026-10-04
 
 ### Added
+- Design spec for the Star Designs gallery and preference questions, plus the iteration brief, in `docs/`.
 - Versioning policy, this changelog, `js/version.js`, a small version stamp on the homepage, a version badge on
   the docs page, and a test that keeps them in sync.
 
