@@ -6,7 +6,7 @@
 <script type="module">
 const out = [];
 if (!['localhost', '127.0.0.1'].includes(location.hostname)) { document.getElementById('out').textContent = 'Local use only: this check clears saved answers.'; throw new Error('local only'); }
-const ok = (cond, msg) => out.push(`${cond ? 'PASS' : 'FAIL'} ${msg}`);
+const ok = (cond, msg) => { out.push(`${cond ? 'PASS' : 'FAIL'} ${msg}`); document.getElementById('out').textContent = out.join('\n') + '\n…'; };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const f = document.getElementById('f');
 const loaded = () => new Promise((r) => f.addEventListener('load', r, { once: true }));
@@ -78,6 +78,30 @@ try {
   ok([...d().querySelectorAll('.shape-letter')].map((e) => e.textContent).join('') === 'ABCDEF', 'shapes: cards lettered A-F');
   const circ = d().querySelector('.circle'), cs = circ.querySelector('svg').getBoundingClientRect(), cr = circ.getBoundingClientRect();
   ok(Math.abs((cs.left + cs.width / 2) - (cr.left + cr.width / 2)) < 0.5 && Math.abs((cs.top + cs.height / 2) - (cr.top + cr.height / 2)) < 0.5, 'shapes: star centered in circle (<0.5px)');
+  // ---- Team Members ----
+  f.src = '../members/'; await loaded(); await sleep(900);
+  const cards = d().querySelectorAll('.member-card');
+  ok(cards.length === 6, 'members: 5 member cards + "Want your own star?"');
+  ok(cards[0].getAttribute('href') === '../member/?id=becky' && d().querySelectorAll('.member-card svg').length === 5, 'members: cards link to member pages and show stars');
+  f.src = '../member/?id=becky'; await loaded(); await sleep(900);
+  ok(d().querySelector('h1').textContent === "Becky's star" && d().querySelectorAll('svg').length === 4, 'member: Becky page shows hero + 3 avatar previews');
+  const mc = d().querySelector('.circle'), ms = mc.querySelector('svg').getBoundingClientRect(), mr = mc.getBoundingClientRect();
+  ok(Math.abs((ms.left + ms.width / 2) - (mr.left + mr.width / 2)) < 0.5 && Math.abs((ms.top + ms.height / 2) - (mr.top + mr.height / 2)) < 0.5, 'member: star centered in circle');
+  const { svgToPngBlob } = await import('../js/png.js');
+  const svgSrc = await (await fetch('../assets/members/becky.svg')).text();
+  const pngBlob = await svgToPngBlob(svgSrc, 1024);
+  const head = new DataView(await pngBlob.slice(0, 24).arrayBuffer());
+  ok(pngBlob.type === 'image/png' && head.getUint32(16) === 1024 && head.getUint32(20) === 1024, 'member: PNG is 1024x1024 image/png');
+  // Pixel content (white square + star) is checked visually; decoding PNGs stalls in headless Chrome.
+  [...d().querySelectorAll('button')].find((b) => b.textContent.startsWith('Download for Teams')).click(); await sleep(1500);
+  ok(/Downloaded all-star-becky\.png/.test(d().querySelector('.dl-status').textContent), 'member: PNG download button confirms');
+  const rq = d().getElementById('request'); rq.value = 'Add a tent'; rq.dispatchEvent(new Event('input', { bubbles: true }));
+  await sleep(500); w().location.reload(); await loaded(); await sleep(900);
+  ok(d().getElementById('request').value === 'Add a tent', 'member: request draft survives reload');
+  f.src = '../member/?id=nobody'; await loaded(); await sleep(600);
+  ok(d().querySelector('h1').textContent.includes("couldn't find"), 'member: unknown id shows not-found');
+  f.src = '../member/?id=new'; await loaded(); await sleep(600);
+  ok(!!d().getElementById('new-name') && !!d().getElementById('request'), 'member: new-star page has name and idea fields');
 } catch (e) { out.push('ERROR ' + e.stack); }
 document.getElementById('out').textContent = out.join('\n') + '\nDONE';
 </script>

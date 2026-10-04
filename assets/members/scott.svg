@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="phoenix-illustrated-title">
-<title id="phoenix-illustrated-title">Phoenix Rising: pictures and symbols</title>
-<defs><clipPath id="phoenix-illustrated-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath></defs>
-<g clip-path="url(#phoenix-illustrated-clip)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="scott-title">
+<title id="scott-title">Scott’s All-Star star: phoenix rising</title>
+<defs><clipPath id="scott-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath></defs>
+<g clip-path="url(#scott-clip)">
 <rect width="1000" height="1000" fill="#4A235A"/>
 <path fill="#C0392B" stroke="#2E1338" stroke-width="8" stroke-linejoin="round" d="M512,590 C491.2,754.7 668.2,765.2 754,858 C737.2,702.9 574.1,679.9 512,590 Z"/>
 <path fill="#C0392B" stroke="#2E1338" stroke-width="8" stroke-linejoin="round" d="M488,590 C425.9,679.9 262.8,702.9 246,858 C331.8,765.2 508.8,754.7 488,590 Z"/>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="detective-title">
+  <title id="detective-title">Detective's All-Star star: magnifying glass</title>
+  <defs>
+    <clipPath id="detective-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath>
+  </defs>
+  <g clip-path="url(#detective-clip)">
+    <rect width="1000" height="1000" fill="#1F6F78"/>
+    <circle cx="480" cy="470" r="340" fill="none" stroke="#2A8791" stroke-width="44"/>
+    <circle cx="480" cy="470" r="245" fill="#2A8791"/>
+    <g transform="rotate(45 480 470)">
+      <rect x="628" y="442" width="70" height="56" fill="#F4C95D" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+      <rect x="690" y="433" width="112" height="74" rx="37" fill="#C89B6D" stroke="#243447" stroke-width="10"/>
+      <line x1="716" y1="453" x2="774" y2="453" stroke="#FFF6E6" stroke-width="10" stroke-linecap="round"/>
+    </g>
+    <circle cx="480" cy="470" r="160" fill="#F4C95D" stroke="#243447" stroke-width="10"/>
+    <circle cx="480" cy="470" r="126" fill="#BFE3F2" stroke="#243447" stroke-width="10"/>
+    <path d="M386,438 A102,102 0 0 1 444,378" fill="none" stroke="#FFF6E6" stroke-width="18" stroke-linecap="round"/>
+    <path d="M436,436 C436,384 530,382 530,430 C530,464 486,466 486,504" fill="none" stroke="#243447" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="486" cy="552" r="20" fill="#243447"/>
+    <g transform="translate(468,322) rotate(-12)">
+      <path d="M-50,-8 Q-100,-6 -122,22 Q-74,26 -36,10 Z" fill="#C89B6D" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+      <path d="M50,-8 Q100,-6 122,22 Q74,26 36,10 Z" fill="#C89B6D" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+      <path d="M-74,10 C-80,-104 80,-104 74,10 Q0,-4 -74,10 Z" fill="#C89B6D" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+      <path d="M0,-80 L0,2 M-42,-66 Q-32,-30 -34,6 M42,-66 Q32,-30 34,6" fill="none" stroke="#243447" stroke-width="6" stroke-linecap="round"/>
+      <path d="M-2,-80 C-30,-108 -52,-84 -26,-72 Q-14,-70 -2,-80 Z M2,-80 C30,-108 52,-84 26,-72 Q14,-70 2,-80 Z" fill="#F4C95D" stroke="#243447" stroke-width="7" stroke-linejoin="round"/>
+      <circle cx="0" cy="-82" r="8" fill="#F4C95D" stroke="#243447" stroke-width="6"/>
+    </g>
+  </g>
+  <path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

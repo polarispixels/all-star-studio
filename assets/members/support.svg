@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="support-illustrated-title">
-  <title id="support-illustrated-title">Support and Care: pictures and symbols</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="support-title">
+  <title id="support-title">Support and Care All-Star star: awareness ribbon</title>
   <defs>
-    <clipPath id="support-illustrated-clip">
+    <clipPath id="support-clip">
       <path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#support-illustrated-clip)">
+  <g clip-path="url(#support-clip)">
     <rect x="0" y="0" width="1000" height="1000" fill="#FFF3E6"/>
     <path d="M473.6,193.8 A28.6,28.6 0 0 1 526.4,193.8 L593.4,355 A18.5,18.5 0 0 0 609,366.3 L783.1,380.3 A28.6,28.6 0 0 1 799.4,430.5 L666.8,544.1 A18.5,18.5 0 0 0 660.8,562.4 L701.3,732.2 A28.6,28.6 0 0 1 658.6,763.2 L509.6,672.2 A18.5,18.5 0 0 0 490.4,672.2 L341.4,763.2 A28.6,28.6 0 0 1 298.7,732.2 L339.2,562.4 A18.5,18.5 0 0 0 333.2,544.1 L200.6,430.5 A28.6,28.6 0 0 1 216.9,380.3 L391,366.3 A18.5,18.5 0 0 0 406.6,355 Z" fill="#F9C6D6"/>
     <g fill="#FFF3E6" opacity="0.5">

@@ -1,10 +1,15 @@
 // Re-shapes star artwork to the house silhouette (DEFAULT_SHAPE_ID in js/star-shape.js).
-// Any <polygon> whose points form a classic five-point star centered at (500,500), at any size,
-// becomes a <path> of the default shape at the same size. Clip paths, outlines and inner frames
-// all follow. Idempotent: already-converted files have no matching polygons.
+// Converts star outlines to the default shape at the same size:
+//  - any <polygon> forming a classic five-point star centered at (500,500), at any size;
+//  - any path d="..." that is exactly one of the SHAPES paths at a known scale (so switching the
+//    house shape later re-shapes everything again).
+// Clip paths, outlines and inner frames all follow. Idempotent.
 // Run: node tools/apply-default-shape.mjs [files...]   (defaults to assets/star.svg + assets/prototypes/*.svg)
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
-import { starVertices, defaultStarPath, OUTER_RADIUS, SHAPES } from '../js/star-shape.js';
+import { starVertices, defaultStarPath, shapePath, OUTER_RADIUS, SHAPES } from '../js/star-shape.js';
+
+// Scales used for star outlines so far: full size, and the Support designs' inner frame (369.6 / 440).
+const KNOWN_SCALES = [1, 0.84];
 
 const classicRatio = SHAPES.find((s) => s.id === 'classic').ratio;
 
@@ -26,7 +31,16 @@ export function applyDefaultShape(src) {
     count++;
     return `<path d="${defaultStarPath(Math.round(scale * 10000) / 10000)}"`;
   });
-  return { out, count };
+  const target = new Map(KNOWN_SCALES.map((k) => [k, defaultStarPath(k)]));
+  const known = new Map();
+  for (const shape of SHAPES) for (const k of KNOWN_SCALES) known.set(shapePath(shape, k), k);
+  const out2 = out.replace(/ d="([^"]+)"/g, (m, d) => {
+    if (!known.has(d)) return m;
+    const next = target.get(known.get(d));
+    if (next !== d) count++;
+    return ` d="${next}"`;
+  });
+  return { out: out2, count };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

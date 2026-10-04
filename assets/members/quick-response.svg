@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="quick-response-title">
+  <title id="quick-response-title">Quick Response All-Star star: dumpster fire with turquoise</title>
+  <defs>
+    <clipPath id="quick-response-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath>
+    <polygon id="quick-response-chevron" points="-42,12 0,-36 42,12 42,46 0,-2 -42,46"/>
+  </defs>
+  <g clip-path="url(#quick-response-clip)">
+    <rect width="1000" height="1000" fill="#1FB5C1"/>
+    <!-- abstract flame front in deep turquoise, rising in the side arms -->
+    <polygon points="60,700 60,470 165,392 220,480 270,470 318,392 360,470 380,520 380,700" fill="#12808A"/>
+    <polygon points="940,700 940,470 835,392 780,480 730,470 682,392 640,470 620,520 620,700" fill="#12808A"/>
+    <!-- upward chevrons in the side arms -->
+    <use href="#quick-response-chevron" x="244" y="408" fill="#FFC93C"/>
+    <use href="#quick-response-chevron" x="244" y="470" fill="#D7263D"/>
+    <use href="#quick-response-chevron" x="756" y="408" fill="#FFC93C"/>
+    <use href="#quick-response-chevron" x="756" y="470" fill="#D7263D"/>
+    <!-- sharp flame spikes behind the fire -->
+    <polygon points="292,500 362,334 420,500" fill="#F46036"/>
+    <polygon points="580,500 642,328 712,500" fill="#F46036"/>
+    <polygon points="322,500 362,404 396,500" fill="#FFC93C"/>
+    <!-- flames -->
+    <path d="M338,500 C312,448 320,395 352,358 C358,396 372,414 396,424 C382,338 420,238 500,135 C494,228 535,272 566,314 C580,288 586,264 580,230 C655,305 696,405 662,500 Z" fill="#D7263D"/>
+    <path d="M372,500 C358,456 370,416 400,390 C406,420 420,436 440,442 C432,368 462,308 506,250 C512,322 554,354 570,398 C584,382 594,362 598,340 C632,396 642,456 630,500 Z" fill="#F46036"/>
+    <path d="M424,500 C412,460 432,420 464,393 C470,420 484,432 498,438 C500,404 518,370 545,343 C572,390 592,452 580,500 Z" fill="#FFC93C"/>
+    <!-- sparks -->
+    <path d="M330,250 L344,278 L330,306 L316,278 Z" fill="#FFC93C"/>
+    <path d="M672,240 L686,268 L672,296 L658,268 Z" fill="#FFC93C"/>
+    <circle cx="590" cy="170" r="11" fill="#FFC93C"/>
+    <circle cx="420" cy="200" r="10" fill="#D7263D"/>
+    <!-- ground -->
+    <rect x="0" y="666" width="1000" height="400" fill="#2E2E3A"/>
+    <rect x="0" y="660" width="1000" height="14" fill="#12808A"/>
+    <!-- open lid, tipped back -->
+    <polygon points="566,490 690,490 735,402 616,420" fill="#1F5A35"/>
+    <!-- wheels -->
+    <circle cx="392" cy="672" r="28" fill="#1F5A35"/>
+    <circle cx="608" cy="672" r="28" fill="#1F5A35"/>
+    <circle cx="392" cy="672" r="10" fill="#1FB5C1"/>
+    <circle cx="608" cy="672" r="10" fill="#1FB5C1"/>
+    <!-- body -->
+    <polygon points="334,504 666,504 638,664 362,664" fill="#2F7A4A"/>
+    <!-- rim -->
+    <rect x="318" y="484" width="364" height="34" rx="9" fill="#1F5A35"/>
+    <!-- ribs -->
+    <polygon points="344,542 656,542 652,562 348,562" fill="#1F5A35"/>
+    <polygon points="358,622 642,622 638,642 362,642" fill="#1F5A35"/>
+    <!-- friendly face -->
+    <ellipse cx="456" cy="588" rx="11" ry="14" fill="#2E2E3A"/>
+    <ellipse cx="544" cy="588" rx="11" ry="14" fill="#2E2E3A"/>
+    <path d="M479,596 Q500,615 521,596" fill="none" stroke="#2E2E3A" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

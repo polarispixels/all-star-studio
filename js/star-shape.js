@@ -1,12 +1,13 @@
 // Star silhouette geometry: five-point stars with rounded (fillet) or flattened (chamfer) corners.
 // Shared by the shape generator (tools/build-shapes.mjs) and later member/team stars.
 // All shapes use a 0 0 1000 1000 viewBox centered at (500, 500) with outer radius 440.
-// DEFAULT_SHAPE_ID is the house silhouette (chosen 2026-10-04): every star artwork uses it.
+// DEFAULT_SHAPE_ID is the house silhouette: every star artwork uses it.
+// History: F 'blend' (2026-10-04, v0.5.0), then B 'soft' (Becky's pick, 2026-10-04).
 
 export const CENTER = { x: 500, y: 500 };
 export const OUTER_RADIUS = 440;
 
-export const DEFAULT_SHAPE_ID = 'blend';
+export const DEFAULT_SHAPE_ID = 'soft';
 
 export const SHAPES = [
   { id: 'classic', name: 'Classic', ratio: 0.45, tip: 0, valley: 0 },

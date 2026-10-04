@@ -6,7 +6,7 @@ Date: 2026-10-04. Ships as **v0.6.0** (MINOR: new pages). This is Track 2 of the
 
 | Topic | Decision |
 |---|---|
-| Silhouette | Every member star uses house shape F (`defaultStarPath()`). |
+| Silhouette | Every member star uses the house shape (`defaultStarPath()`). This was F when written, and changed to B "Softened points" before release at Becky's request. |
 | Names | First names only. No login, no security; the site is public. |
 | Members at launch | **Becky** (outdoors illustrated: mountains and kayak), **Scott** (illustrated Phoenix), **Detective** (new: for Becky's boss, "All-Star detective at your service" 🔍), plus placeholder cards **Quick Response** and **Support and Care** for teammates not yet named. Placeholders get renamed later. |
 | Quick Response star | Starts with Becky's suggestion applied: the dumpster picture, with **turquoise blue** added, the red/yellow flames kept, and a few of the abstract version's sharp flame shapes for "a mix of both". |

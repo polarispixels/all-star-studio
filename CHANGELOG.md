@@ -11,6 +11,27 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-04
+
+### Added
+- **Team Members** (`members/`): a card per All-Star with their star. **Becky** (mountains and kayak), **Scott**
+  (phoenix), **Detective** (new magnifying-glass star for Becky's boss), plus placeholders **Quick Response**
+  (redrawn per Becky's note: turquoise added, red and yellow flames kept, a mix of picture and pattern) and
+  **Support and Care**. A "Want your own star?" card leads to a new-star request.
+- **Member page** (`member/?id=…`): the star large, avatar previews (tiny, small, in a circle),
+  **Download for Teams / Outlook** (1024px PNG on a white square, with a 512px fallback), Download SVG, and
+  "What would you change about your star?" with Share or Copy to Ryan (request and redraw). Drafts are saved
+  in the browser.
+- `js/png.js` (SVG to PNG), `js/members/roster.js`, `js/members/request.js`, member tests, and Team Members
+  browser checks.
+
+### Changed
+- **House star shape is now B, "Softened points"** (Becky's pick), replacing F from v0.5.0. Every star was
+  re-shaped: homepage, Star Designs, and member stars. `tools/apply-default-shape.mjs` now converts any known
+  shape path, so a future house-shape change is one setting plus one command. Star Designs
+  `PROTOTYPE_VERSION` is now 1.2.0.
+- Homepage: **Team Members** is the main button, and the earlier pages sit under "Earlier ideas".
+
 ## [0.5.0] - 2026-10-04
 
 ### Changed
@@ -106,7 +127,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/polarispixels/all-star-studio/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/polarispixels/all-star-studio/compare/v0.4.2...v0.5.0
 [0.4.2]: https://github.com/polarispixels/all-star-studio/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/polarispixels/all-star-studio/compare/v0.4.0...v0.4.1

@@ -62,3 +62,5 @@ a { color: var(--accent); }
 .button-outline:hover { background: transparent; }
 .status { max-width: 65ch; text-align: left; display: grid; gap: 10px; margin-top: 24px; }
 .status h2 { margin: 0; text-align: center; }
+.earlier { margin: 14px 0 0; color: var(--muted); font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; }
+.button-small { font-size: 1rem; padding: 10px 26px; min-width: 200px; }

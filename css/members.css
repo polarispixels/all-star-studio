@@ -1,0 +1,29 @@
+/* Team Members: big tappable member cards; member page with hero star, avatar sizes, downloads, request. */
+.member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.member-card {
+  display: grid; gap: 6px; align-content: start; padding: 16px; border-radius: 18px; text-decoration: none;
+  background: var(--surface); border: 2px solid var(--line); color: var(--ink);
+}
+.member-card:hover, .member-card:focus-visible { border-color: var(--accent); }
+.member-card .art { aspect-ratio: 1; background: var(--art-bg); border-radius: 12px; padding: 8%; display: grid; place-items: center; margin-bottom: 6px; }
+.member-name { font-size: 1.35rem; font-weight: 800; }
+.member-blurb { color: var(--muted); font-size: .95rem; }
+.member-new .art-new { font-size: 5rem; font-weight: 300; color: var(--accent); }
+
+.member-page { gap: 22px; max-width: 760px; }
+.member-page .lede { color: var(--muted); font-size: 1.1rem; max-width: 60ch; }
+.member-hero .art { width: min(100%, 460px); aspect-ratio: 1; background: var(--art-bg); border-radius: 18px; padding: 5%; }
+.sizes { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; display: grid; gap: 8px; }
+.sizes-label { font-weight: 700; font-size: .95rem; }
+.sizes-row { display: flex; flex-wrap: wrap; align-items: end; gap: 18px; }
+.sizes figure { margin: 0; display: grid; gap: 6px; justify-items: center; }
+.sizes figcaption { font-size: .9rem; color: var(--muted); }
+.art-32 { width: 32px; height: 32px; }
+.art-64 { width: 64px; height: 64px; }
+.circle { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; background: #ffffff; border: 2px solid var(--line); display: grid; place-items: center; }
+.circle .art { width: 100%; height: 100%; }
+.dl-status { min-height: 1.4em; color: var(--muted); }
+.request-title { margin-top: 10px; }
+.textbox input { font: inherit; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--line); background: var(--surface); color: var(--ink); width: 100%; max-width: 360px; }
+.request-preview { white-space: pre-wrap; overflow-wrap: anywhere; font: .95rem/1.5 ui-monospace, Menlo, monospace; background: var(--bg); border-radius: 12px; padding: 14px; margin: 0; }
+@media (max-width: 560px) { .member-grid { grid-template-columns: 1fr 1fr; gap: 12px; } .member-card { padding: 12px; } .member-name { font-size: 1.1rem; } }

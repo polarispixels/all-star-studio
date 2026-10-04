@@ -1,0 +1,14 @@
+// Team roster: one entry per member star. First names only (the site is public, no login).
+// Adding someone = one entry here + assets/members/<id>.svg drawn on house shape F.
+// Bump starVersion when a member's star is redrawn, so change requests name the version they refer to.
+export const ROSTER = [
+  { id: 'becky', name: 'Becky', blurb: 'Mountains, evergreens and a kayak on the lake.', starVersion: 1 },
+  { id: 'scott', name: 'Scott', blurb: 'A phoenix rising, wings raised.', starVersion: 1 },
+  { id: 'detective', name: 'Detective', blurb: 'All-Star detective at your service: always investigating.', starVersion: 1 },
+  { id: 'quick-response', name: 'Quick Response', blurb: 'A cheerful dumpster fire for lightning-fast answers, now with turquoise.', starVersion: 1, placeholder: true },
+  { id: 'support', name: 'Support and Care', blurb: 'A pink awareness ribbon at the heart of the star.', starVersion: 1, placeholder: true },
+];
+
+export const NEW_ID = 'new';
+export const findMember = (id) => ROSTER.find((m) => m.id === id) ?? null;
+export const memberStarPath = (id, prefix = '../') => `${prefix}assets/members/${id}.svg`;

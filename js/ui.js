@@ -206,3 +206,40 @@ export function wireSend({ getText, getJson, baseName, shareTitle }) {
     setStatus(`Downloaded ${baseName}.json`);
   });
 }
+
+// Share/Copy for a single request message. `getText()` returns the text or null when empty.
+export function wireRequestSend({ shareBtn, copyBtn, statusEl, getText, shareTitle }) {
+  const say = (msg) => { statusEl.textContent = ''; requestAnimationFrame(() => { statusEl.textContent = msg; }); };
+  const empty = () => say('Type your request first, then send it.');
+  if (navigator.share) {
+    shareBtn.hidden = false;
+    shareBtn.addEventListener('click', async () => {
+      const text = getText();
+      if (!text) return empty();
+      try {
+        await navigator.share({ title: shareTitle, text });
+        say('Shared. Ryan will take it from here!');
+      } catch (err) {
+        if (err?.name !== 'AbortError') say("Couldn't open sharing. Use Copy instead.");
+      }
+    });
+  }
+  copyBtn.addEventListener('click', async () => {
+    const text = getText();
+    if (!text) return empty();
+    try {
+      await navigator.clipboard.writeText(text);
+      say('Copied! Paste it into a message to Ryan.');
+    } catch {
+      const pre = $('#request-preview');
+      pre.hidden = false;
+      pre.textContent = text;
+      const range = document.createRange();
+      range.selectNodeContents(pre);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      say("Couldn't copy automatically. The message is selected below. Use your device's Copy command.");
+    }
+  });
+}

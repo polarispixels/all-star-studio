@@ -1,6 +1,6 @@
 // Prototype gallery content: four themes, two designs each, and the preference questions.
 // Data only. Bump PROTOTYPE_VERSION whenever artwork or choices change meaning (see feedback.js).
-export const PROTOTYPE_VERSION = '1.1.0'; // 1.1.0: all eight stars reshaped to house shape F
+export const PROTOTYPE_VERSION = '1.2.0'; // 1.1.0: reshaped to shape F; 1.2.0: reshaped to house shape B
 
 export const DIRECTION_CHOICES = [
   { id: 'abstract', label: 'Colors and patterns' },
