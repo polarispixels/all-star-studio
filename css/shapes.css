@@ -1,5 +1,6 @@
 /* Star Shapes: one card per shape. Builds on designs.css tokens, tiles and the Send section. */
 .shape-list { display: grid; gap: 28px; }
+.chosen-note { background: var(--accent-soft); border-radius: 12px; padding: 12px 14px; }
 .shape-card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: grid; gap: 16px; min-width: 0; }
 .shape-title { font-size: 1.6rem; display: flex; align-items: center; gap: 12px; }
 .shape-letter {

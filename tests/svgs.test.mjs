@@ -22,7 +22,12 @@ for (const shape of SHAPES) {
   }
 }
 
-test('classic shape path traces the shared star polygon', () => {
+test('homepage star uses the house silhouette', () => {
+  const src = readFileSync(new URL('../assets/star.svg', import.meta.url), 'utf8');
+  assert.deepEqual(checkSvg(src), []);
+});
+
+test('classic shape path traces the original star polygon', () => {
   const classic = SHAPES.find((s) => s.id === 'classic');
   assert.match(shapePath(classic), /^M500,60 L616\.4,339\.8/);
 });

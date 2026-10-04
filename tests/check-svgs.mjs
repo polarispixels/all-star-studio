@@ -1,15 +1,16 @@
-// Validates prototype SVGs: self-contained, shared star geometry, every url(#id)/href="#id" resolves.
+// Validates prototype SVGs: self-contained, house star silhouette, every url(#id)/href="#id" resolves.
 // Usage: node tests/check-svgs.mjs [file.svg ...]   (defaults to all of assets/prototypes/*.svg)
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { defaultStarPath } from '../js/star-shape.js';
 
-export const STAR_POINTS = '500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8';
+export const STAR_PATH = defaultStarPath();
 
 export function checkSvg(src, { sharedStar = true } = {}) {
   const errors = [];
   if (!/<svg[^>]*viewBox="0 0 1000 1000"/.test(src)) errors.push('viewBox must be "0 0 1000 1000"');
   if (!/<title[^>]*>[^<]+<\/title>/.test(src)) errors.push('missing <title>');
-  if (sharedStar && !src.includes(STAR_POINTS)) errors.push('shared star polygon points not found');
+  if (sharedStar && !src.includes(`d="${STAR_PATH}"`)) errors.push('house star silhouette (default shape path) not found: run node tools/apply-default-shape.mjs');
   if (/<script|<image|<foreignObject|<text|<style[^>]*>[^<]*@import/i.test(src)) errors.push('contains script, image, foreignObject, text, or @import');
   if (/(?:href|src)="(?!#)[^"]+"/.test(src.replace(/xmlns(:\w+)?="[^"]*"/g, ''))) errors.push('external href/src reference');
   if (/url\((?!#)/.test(src)) errors.push('url() not pointing to a local #id');

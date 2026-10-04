@@ -11,6 +11,17 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-04
+
+### Changed
+- **Shape F, "Squared and softened," is the house star silhouette.** The homepage star, the favicon, and all
+  eight Star Designs stars (including the Support designs' inner frames) now use it. `DEFAULT_SHAPE_ID` in
+  `js/star-shape.js` controls it, and `tools/apply-default-shape.mjs` re-shapes star artwork.
+- Star Designs `PROTOTYPE_VERSION` is now 1.1.0 because the artwork changed. Answers saved on 1.0.0 are kept
+  and offered as a download, never attached to the new art.
+- Star Shapes page notes the decision. Homepage line: "Our star shape is chosen. Team Members is coming next."
+- The SVG checker now requires the house silhouette instead of the original sharp star.
+
 ## [0.4.2] - 2026-10-04
 
 ### Changed
@@ -95,7 +106,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.4.2...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/polarispixels/all-star-studio/compare/v0.4.2...v0.5.0
 [0.4.2]: https://github.com/polarispixels/all-star-studio/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/polarispixels/all-star-studio/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/polarispixels/all-star-studio/compare/v0.3.1...v0.4.0

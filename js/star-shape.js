@@ -1,9 +1,12 @@
 // Star silhouette geometry: five-point stars with rounded (fillet) or flattened (chamfer) corners.
 // Shared by the shape generator (tools/build-shapes.mjs) and later member/team stars.
 // All shapes use a 0 0 1000 1000 viewBox centered at (500, 500) with outer radius 440.
+// DEFAULT_SHAPE_ID is the house silhouette (chosen 2026-10-04): every star artwork uses it.
 
 export const CENTER = { x: 500, y: 500 };
 export const OUTER_RADIUS = 440;
+
+export const DEFAULT_SHAPE_ID = 'blend';
 
 export const SHAPES = [
   { id: 'classic', name: 'Classic', ratio: 0.45, tip: 0, valley: 0 },
@@ -63,8 +66,12 @@ export function roundedPath(pts, radii) {
   return parts.join(' ') + ' Z';
 }
 
-export function shapePath(shape) {
-  let pts = starVertices(shape.ratio);
-  if (shape.chamfer) pts = chamferTips(pts, shape.chamfer);
-  return roundedPath(pts, pts.map((p) => (p.outer ? shape.tip : shape.valley)));
+// `scale` shrinks or grows the whole silhouette about the center (corners scale with it).
+export function shapePath(shape, scale = 1) {
+  let pts = starVertices(shape.ratio, OUTER_RADIUS * scale);
+  if (shape.chamfer) pts = chamferTips(pts, shape.chamfer * scale);
+  return roundedPath(pts, pts.map((p) => (p.outer ? shape.tip : shape.valley) * scale));
 }
+
+export const defaultShape = () => SHAPES.find((s) => s.id === DEFAULT_SHAPE_ID);
+export const defaultStarPath = (scale = 1) => shapePath(defaultShape(), scale);
