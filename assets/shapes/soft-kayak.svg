@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="shape-soft-kayak-title">
+  <title id="shape-soft-kayak-title">Becky's kayak star on the Softened points shape</title>
+  <defs>
+    <clipPath id="shape-soft-kayak-clip"><path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z"/></clipPath>
+  </defs>
+  <g clip-path="url(#shape-soft-kayak-clip)">
+    <rect width="1000" height="1000" fill="#9ED0EA"/>
+    <circle cx="200" cy="430" r="84" fill="#F7F7F2"/>
+    <circle cx="200" cy="430" r="62" fill="#F4C95D"/>
+    <polygon points="500,150 180,580 520,580" fill="#247BA0"/>
+    <polygon points="500,150 520,580 830,580" fill="#1A5674"/>
+    <polygon points="500,150 420,257 452,240 478,276 506,246 540,272 581,258" fill="#F7F7F2"/>
+    <polygon points="500,150 508,244 548,262 552,236" fill="#9ED0EA"/>
+    <path d="M0,560 Q120,500 300,530 Q420,550 520,580 L0,600 Z" fill="#74A84A"/>
+    <path d="M440,580 Q600,470 760,470 Q900,470 1000,520 L1000,600 Z" fill="#74A84A"/>
+    <polygon points="620,410 591.2,485 648.8,485" fill="#2D6A4F"/>
+    <polygon points="620,443 572,548 668,548" fill="#2D6A4F"/>
+    <rect x="613.28" y="545" width="13.440000000000001" height="18" fill="#1A5674"/>
+    <polygon points="700,360 667.6,447.5 732.4,447.5" fill="#2D6A4F"/>
+    <polygon points="700,398.5 646,521 754,521" fill="#2D6A4F"/>
+    <rect x="692.44" y="517.5" width="15.120000000000001" height="21" fill="#1A5674"/>
+    <polygon points="785,390 758.6,455 811.4,455" fill="#2D6A4F"/>
+    <polygon points="785,418.6 741,509.6 829,509.6" fill="#2D6A4F"/>
+    <rect x="778.84" y="507" width="12.32" height="15.6" fill="#1A5674"/>
+    <polygon points="330,452 309.6,502 350.4,502" fill="#2D6A4F"/>
+    <polygon points="330,474 296,544 364,544" fill="#2D6A4F"/>
+    <rect x="325.24" y="542" width="9.520000000000001" height="12" fill="#1A5674"/>
+    <path d="M0,575 Q250,555 500,568 T1000,560 L1000,1000 L0,1000 Z" fill="#247BA0"/>
+    <path d="M290,690 L420,690 M560,725 L690,725 M300,790 L420,790 M590,800 L690,800" stroke="#9ED0EA" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <path d="M336,660 Q500,690 664,660" stroke="#1A5674" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <path d="M320,640 C410,616 590,616 680,640 C590,670 410,670 320,640 Z" fill="#F4C95D"/>
+    <path d="M326,642 C410,652 590,652 674,642" fill="none" stroke="#1A5674" stroke-width="7"/>
+    <ellipse cx="500" cy="634" rx="44" ry="11" fill="#1A5674"/>
+    <path d="M472,638 L476,594 Q478,582 500,580 Q522,582 524,594 L528,638 Z" fill="#F7F7F2"/>
+    <circle cx="500" cy="556" r="19" fill="#1A5674"/>
+    <path d="M484,596 L452,606 M516,596 L546,628" stroke="#1A5674" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <line x1="392" y1="582" x2="612" y2="670" stroke="#1A5674" stroke-width="10" stroke-linecap="round"/>
+    <ellipse cx="384" cy="579" rx="30" ry="12" transform="rotate(22 384 579)" fill="#1A5674"/>
+    <ellipse cx="620" cy="673" rx="30" ry="12" transform="rotate(22 620 673)" fill="#1A5674"/>
+  </g>
+  <path d="M468.6,135.5 A34,34 0 0 1 531.4,135.5 L611.2,327.4 A22,22 0 0 0 629.8,340.9 L837,357.5 A34,34 0 0 1 856.4,417.2 L698.5,552.4 A22,22 0 0 0 691.4,574.3 L739.7,776.5 A34,34 0 0 1 688.9,813.4 L511.5,705 A22,22 0 0 0 488.5,705 L311.1,813.4 A34,34 0 0 1 260.3,776.5 L308.6,574.3 A22,22 0 0 0 301.5,552.4 L143.6,417.2 A34,34 0 0 1 163,357.5 L370.2,340.9 A22,22 0 0 0 388.8,327.4 Z" fill="none" stroke="#243447" stroke-width="10" stroke-linejoin="round"/>
+</svg>

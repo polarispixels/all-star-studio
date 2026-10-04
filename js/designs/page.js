@@ -5,36 +5,19 @@ import {
 import {
   visibleFollowUps, outdoorMostChoices, answeredThemeCount, toExportJson, toSummaryText, loadCompatible,
 } from './feedback.js';
-import { readRaw, writeRaw, PREVIOUS_KEY } from './store.js';
+import {
+  $, el, svgText as svgTextAt, artSlot as artSlotAt, downloadBlob, tileGroup, textBox,
+  createSaver, handleVersionChange, wireSend, loadRaw,
+} from '../ui.js';
 
-const $ = (sel, root = document) => root.querySelector(sel);
-const el = (tag, attrs = {}, ...children) => {
-  const node = document.createElement(tag);
-  for (const [k, v] of Object.entries(attrs)) {
-    if (v === false || v === null || v === undefined) continue;
-    if (k === 'class') node.className = v;
-    else if (k === 'text') node.textContent = v;
-    else node.setAttribute(k, v === true ? '' : v);
-  }
-  for (const c of children) if (c) node.append(c);
-  return node;
-};
+const STORAGE_KEY = 'all-star-studio.prototype-feedback.v1';
+const PREVIOUS_KEY = 'all-star-studio.prototype-feedback.v1.previous';
 
 // ---------- state ----------
 
-const loaded = loadCompatible(readRaw());
+const loaded = loadCompatible(loadRaw(STORAGE_KEY));
 const state = loaded.feedback;
-let saveTimer = null;
-
-function save() {
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => {
-    const ok = writeRaw(JSON.stringify(state));
-    const status = $('#save-status');
-    status.textContent = ok ? 'Saved on this device ✓' : "Couldn't save on this device. Use Copy or Download before closing.";
-    status.classList.toggle('warn', !ok);
-  }, 250);
-}
+const save = createSaver(STORAGE_KEY, () => state);
 
 function changed() {
   save();
@@ -43,58 +26,8 @@ function changed() {
   refreshSummary();
 }
 
-// ---------- SVG artwork ----------
-
-const svgCache = new Map();
-let instanceCount = 0;
-
-async function svgText(designId) {
-  if (!svgCache.has(designId)) {
-    svgCache.set(designId, fetch(svgPath(designId)).then((r) => {
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return r.text();
-    }));
-  }
-  return svgCache.get(designId);
-}
-
-// Give every id in one inline copy a unique prefix so several copies can share the page.
-function uniquify(text, prefix) {
-  return text
-    .replace(/\sid="([^"]+)"/g, ` id="${prefix}-$1"`)
-    .replace(/url\(#([^)]+)\)/g, `url(#${prefix}-$1)`)
-    .replace(/href="#([^"]+)"/g, `href="#${prefix}-$1"`)
-    .replace(/aria-labelledby="([^"]+)"/g, `aria-labelledby="${prefix}-$1"`);
-}
-
-function artSlot(designId, { decorative = false } = {}) {
-  const slot = el('div', { class: 'art' });
-  svgText(designId).then((text) => {
-    const tpl = document.createElement('template');
-    tpl.innerHTML = uniquify(text, `i${++instanceCount}`);
-    const svg = tpl.content.querySelector('svg');
-    if (decorative) {
-      svg.setAttribute('aria-hidden', 'true');
-      svg.removeAttribute('role');
-      svg.removeAttribute('aria-labelledby');
-    }
-    slot.replaceChildren(svg);
-  }).catch(() => {
-    slot.replaceChildren(el('p', { class: 'art-error', text: 'This picture could not load. Check your connection and reload the page.' }));
-  });
-  return slot;
-}
-
-// ---------- downloads ----------
-
-function downloadBlob(blob, filename) {
-  const url = URL.createObjectURL(blob);
-  const a = el('a', { href: url, download: filename });
-  document.body.append(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
+const svgText = (designId) => svgTextAt(svgPath(designId));
+const artSlot = (designId, opts) => artSlotAt(svgPath(designId), opts);
 
 async function downloadSvg(designId, statusEl) {
   try {
@@ -106,57 +39,7 @@ async function downloadSvg(designId, statusEl) {
   }
 }
 
-// ---------- tiles ----------
 
-function tile({ type, name, value, label, checked, art }) {
-  const input = el('input', { type, name, value, checked: checked || false });
-  const body = el('span', { class: 'tile-body' },
-    el('span', { class: 'tile-check', 'aria-hidden': 'true', text: '✓' }),
-    art || null,
-    el('span', { class: 'tile-label', text: label }),
-    el('span', { class: 'tile-chosen', 'aria-hidden': 'true', text: 'Chosen' }),
-  );
-  const lab = el('label', { class: `tile${art ? ' tile-art' : ''}` }, input, body);
-  input.addEventListener('change', () => {
-    if (input.checked && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      lab.classList.remove('pop');
-      void lab.offsetWidth;
-      lab.classList.add('pop');
-    }
-  });
-  return lab;
-}
-
-function tileGroup({ legend, name, type, choices, selected, onChange, artFor, hint }) {
-  const fs = el('fieldset', { class: `choices${artFor ? ' choices-art' : ''}` },
-    el('legend', { text: legend }));
-  if (hint) fs.append(el('p', { class: 'hint', text: hint }));
-  const grid = el('div', { class: 'tiles' });
-  for (const c of choices) {
-    const checked = type === 'checkbox' ? selected.includes(c.id) : selected === c.id;
-    grid.append(tile({ type, name, value: c.id, label: c.label, checked, art: artFor ? artFor(c) : null }));
-  }
-  fs.append(grid);
-  fs.addEventListener('change', () => {
-    if (type === 'checkbox') onChange([...fs.querySelectorAll('input:checked')].map((i) => i.value));
-    else onChange(fs.querySelector('input:checked')?.value ?? null);
-  });
-  return fs;
-}
-
-function textBox({ id, label, value, max, hint, rows = 3, onInput }) {
-  const area = el('textarea', { id, rows, maxlength: max });
-  area.value = value;
-  const count = el('span', { class: 'count', 'aria-hidden': 'true' });
-  const update = () => { count.textContent = `${area.value.length} / ${max}`; };
-  update();
-  area.addEventListener('input', () => { update(); onInput(area.value.slice(0, max)); });
-  const wrap = el('div', { class: 'textbox' }, el('label', { for: id, text: label }));
-  if (hint) wrap.append(el('p', { class: 'hint', id: `${id}-hint`, text: hint }));
-  if (hint) area.setAttribute('aria-describedby', `${id}-hint`);
-  wrap.append(area, count);
-  return wrap;
-}
 
 // ---------- look closer dialog ----------
 
@@ -332,74 +215,19 @@ function refreshSummary() {
   $('#summary').textContent = toSummaryText(state);
 }
 
-function setStatus(msg) {
-  const s = $('#send-status');
-  s.textContent = '';
-  requestAnimationFrame(() => { s.textContent = msg; });
-}
-
-function selectSummary() {
-  const range = document.createRange();
-  range.selectNodeContents($('#summary'));
-  const sel = window.getSelection();
-  sel.removeAllRanges();
-  sel.addRange(range);
-}
-
-function wireSend() {
-  $('#view-feedback').open = true;
-  const share = $('#share');
-  if (navigator.share) {
-    share.hidden = false;
-    share.addEventListener('click', async () => {
-      try {
-        await navigator.share({ title: 'My All-Star Studio feedback', text: toSummaryText(state) });
-        setStatus('Shared. Thank you!');
-      } catch (err) {
-        if (err?.name !== 'AbortError') setStatus("Couldn't open sharing. Use Copy or Download instead.");
-      }
-    });
-  }
-  $('#copy').addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(toSummaryText(state));
-      setStatus('Copied! Paste it into a message to Ryan.');
-    } catch {
-      $('#view-feedback').open = true;
-      selectSummary();
-      setStatus("Couldn't copy automatically. The summary is now selected. Use your device's Copy command.");
-    }
-  });
-  $('#download-text').addEventListener('click', () => {
-    downloadBlob(new Blob([toSummaryText(state)], { type: 'text/plain;charset=utf-8' }), 'all-star-studio-feedback.txt');
-    setStatus('Downloaded all-star-studio-feedback.txt');
-  });
-  $('#download-json').addEventListener('click', () => {
-    const json = JSON.stringify(toExportJson(state), null, 2) + '\n';
-    downloadBlob(new Blob([json], { type: 'application/json;charset=utf-8' }), 'all-star-studio-feedback.json');
-    setStatus('Downloaded all-star-studio-feedback.json');
-  });
-}
-
-function handleVersionChange() {
-  if (loaded.status !== 'mismatch') return;
-  writeRaw(loaded.oldRaw, PREVIOUS_KEY);
-  const banner = $('#version-banner');
-  banner.hidden = false;
-  $('#download-old').addEventListener('click', () => {
-    downloadBlob(new Blob([loaded.oldRaw], { type: 'application/json;charset=utf-8' }), 'all-star-studio-feedback-earlier.json');
-    $('#version-status').textContent = 'Downloaded your earlier answers.';
-  });
-  $('#start-fresh').addEventListener('click', () => {
-    banner.hidden = true;
-    changed();
-  });
-}
-
 renderThemes();
 renderQuestions();
-wireSend();
-handleVersionChange();
+wireSend({
+  getText: () => toSummaryText(state),
+  getJson: () => toExportJson(state),
+  baseName: 'all-star-studio-feedback',
+  shareTitle: 'My All-Star Studio feedback',
+});
+handleVersionChange(loaded, {
+  previousKey: PREVIOUS_KEY,
+  filename: 'all-star-studio-feedback-earlier.json',
+  onStartFresh: changed,
+});
 refreshFollowUps();
 refreshProgress();
 refreshSummary();

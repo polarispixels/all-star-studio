@@ -32,6 +32,8 @@ tools/svg-preview.sh out.png a.svg b.svg     # screenshot SVGs large + at 64px (
 
 Screenshots use Windows Chrome headless, whose window is at least about 500px wide. To check phone width, put the page in a 360px `<iframe>`. For the in-browser interaction check, serve the **parent** directory and dump-dom `tools/browser-check.html` (local only; it clears saved answers). Pages that use `hidden` need the global `[hidden] { display: none !important; }` rule, because component `display` rules override it.
 
+**Star shapes:** `js/star-shape.js` defines the rounded/chamfered silhouettes (`SHAPES`, `shapePath`). After changing it, run `node tools/build-shapes.mjs`; a test fails if `assets/shapes/` is stale. The shape Becky picks becomes the silhouette for later member and team stars. Shared page helpers (tiles, SVG instancing, saving, Send section) live in `js/ui.js`, and storage lives in `js/store.js`.
+
 **Star Designs gallery:** content and questions live in `js/designs/content.js` (bump `PROTOTYPE_VERSION` when artwork or choices change meaning). Pure feedback logic is in `feedback.js`, storage in `store.js`, and DOM code in `page.js`. Inline SVG copies get per-instance id prefixes; downloads send the unmodified file.
 
 ## Versioning (SemVer)

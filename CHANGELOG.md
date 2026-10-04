@@ -11,6 +11,22 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-04
+
+### Added
+- **Star Shapes page** (`shapes/`): five star silhouettes in the friendly, rounded style of the company heart
+  (Classic, Softened points, Chunky and round, Plump, Squared-off). Each is shown plain, with Becky's kayak star,
+  and at avatar sizes, including a circle crop. She picks a favorite, can add notes, and sends answers with the
+  same Share/Copy/Download flow.
+- `js/star-shape.js`: reusable rounded/chamfered star geometry. `tools/build-shapes.mjs` generates
+  `assets/shapes/*.svg` from it.
+- Tests for the shape feedback model and shape assets (including a check that the assets match the generator),
+  and Star Shapes checks in `tools/browser-check.html`.
+
+### Changed
+- Homepage: **Star Shapes** is now the main button. Star Designs and Heart Examples are secondary.
+- Shared page helpers moved to `js/ui.js`, and storage to `js/store.js`. Star Designs behavior is unchanged.
+
 ## [0.3.1] - 2026-10-04
 
 ### Changed
@@ -61,7 +77,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/polarispixels/all-star-studio/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/polarispixels/all-star-studio/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/polarispixels/all-star-studio/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/polarispixels/all-star-studio/compare/v0.2.1...v0.2.2

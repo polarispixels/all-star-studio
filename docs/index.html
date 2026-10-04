@@ -14,7 +14,7 @@
       <p class="crumb"><a href="../">← All-Star Studio</a></p>
       <h1>All-Star Studio Docs</h1>
       <p class="lede">The current state of the project: what is live, what changed recently, what the user said, and what is still undecided. Read this page first, then follow the document links.</p>
-      <p class="meta">Current version <strong data-docs-version>v0.3.1</strong> · Last updated 2026-10-04 · <a href="../CHANGELOG.md">Full changelog</a> · <a href="https://github.com/polarispixels/all-star-studio">Source on GitHub</a></p>
+      <p class="meta">Current version <strong data-docs-version>v0.4.0</strong> · Last updated 2026-10-04 · <a href="../CHANGELOG.md">Full changelog</a> · <a href="https://github.com/polarispixels/all-star-studio">Source on GitHub</a></p>
     </header>
 
     <section id="live">
@@ -22,7 +22,8 @@
       <table>
         <thead><tr><th>Page</th><th>Address</th><th>What it does</th></tr></thead>
         <tbody>
-          <tr><td>Homepage</td><td><a href="../">/all-star-studio/</a></td><td>Star logo, tagline, and two buttons: <b>Star Designs</b> and <b>Heart Examples</b>.</td></tr>
+          <tr><td>Homepage</td><td><a href="../">/all-star-studio/</a></td><td>Star logo, tagline, and buttons: <b>Star Shapes</b> (main), <b>Star Designs</b>, and <b>Heart Examples</b>.</td></tr>
+          <tr><td>Star Shapes</td><td><a href="../shapes/">/all-star-studio/shapes/</a></td><td>Pick the star silhouette every future design will use: five rounded, heart-style shapes, each with Becky's kayak star and avatar-size previews. Same Send-to-Ryan flow. <b>Waiting on her pick.</b></td></tr>
           <tr><td>Star Designs</td><td><a href="../designs/">/all-star-studio/designs/</a></td><td>Preference-discovery prototype: 4 ideas × 2 original SVG stars, preference choices, an optional questionnaire, and Share/Copy/Download of the answers. Answers stay in the user's browser.</td></tr>
           <tr><td>Heart Examples</td><td><a href="../ideas/">/all-star-studio/ideas/</a></td><td>CVS Health heart pin photos grouped by technique, shown under a "for brainstorming only" disclaimer. Reference only; never reused as artwork.</td></tr>
           <tr><td>Docs</td><td><a href="./">/all-star-studio/docs/</a></td><td>This page.</td></tr>
@@ -37,6 +38,7 @@
       <table>
         <thead><tr><th>Version</th><th>Date</th><th>Summary</th></tr></thead>
         <tbody>
+          <tr><td>v0.4.0</td><td>2026-10-04</td><td>Star Shapes page: five rounded, heart-style star silhouettes shown with Becky's kayak star and at avatar sizes. Star Shapes becomes the main homepage button.</td></tr>
           <tr><td>v0.3.1</td><td>2026-10-04</td><td>Docs page rewritten as this current-state page. Feedback from the v0.3.0 review recorded. Project spec marked with its current status.</td></tr>
           <tr><td>v0.3.0</td><td>2026-10-04</td><td>Star Designs gallery and preference questions. Homepage gets the Star Designs and Heart Examples buttons.</td></tr>
           <tr><td>v0.2.2</td><td>2026-10-04</td><td>Versioning policy, changelog, version stamp, and the gallery design spec.</td></tr>
@@ -77,14 +79,25 @@
       </ul>
     </section>
 
+    <section id="direction">
+      <h2>Current direction (after a call with Becky, 2026-10-04)</h2>
+      <ul>
+        <li><strong>Becky's picks:</strong> her overall favorite is the Outdoor "pictures and symbols" star (mountains and kayak). She also prefers the illustrated Phoenix.</li>
+        <li><strong>Two tracks.</strong> (1) <em>Team Star:</em> one unified logo for the contest, built from "pieces of everyone" (each member's symbol contributes), due <strong>2026-10-22</strong>. (2) <em>Team Members:</em> each teammate gets a personal avatar star (Becky: kayak; Scott: Phoenix; a <em>Detective</em> star for her boss, from the team's "detective squad" joke about research rabbit holes).</li>
+        <li><strong>The only contest rule:</strong> the Aetna/CVS heart may not be used. The star should instead borrow the heart's <em>style</em> (straight edges, rounded corners, chunky and friendly), which is what Star Shapes explores. The chosen shape becomes the base silhouette for every later star.</li>
+        <li><strong>Editing:</strong> each member page will have a free-form "what would you change?" box. Requests are sent to Ryan, and the star is redrawn and published (request and redraw). No AI in the site, no backend, no login. The site shows first names only.</li>
+        <li><strong>Avatars:</strong> the app is unconfirmed, so designs are tested in a circle crop. Teams and Outlook need PNG, so PNG export is planned with Team Members.</li>
+        <li><strong>Next:</strong> after Becky picks a shape, build Team Members (Becky, Scott, Detective), then the Team Star candidates on that shape.</li>
+      </ul>
+    </section>
+
     <section id="open">
       <h2>Open decisions and questions</h2>
       <ol>
-        <li>Confirm the contest deadline year (2026-10-22 assumed) and any brand rules for colors or shapes.</li>
-        <li>Phoenix "a mix of both … Perfect": which version, or a blend?</li>
-        <li>Her overall favorite design, and whether art may extend outside the star (both skipped).</li>
-        <li>One team logo or personal stars per teammate?</li>
-        <li>Next iteration focus. Proposed: refine 3–4 contest-entry candidates tested at Teams and email-signature sizes before building the general star maker.</li>
+        <li>Which star shape Becky picks (Star Shapes page).</li>
+        <li>Which app shows the avatars (circle crop assumed).</li>
+        <li>Whether art may extend outside the star (skipped in v0.3.0).</li>
+        <li>The team roster: first names and each person's star idea.</li>
         <li>From the iteration brief: which modes (abstract, emblem, scene) belong in the product, and which symbols deserve reusable assets first.</li>
       </ol>
     </section>
@@ -96,6 +109,7 @@
         <tbody>
           <tr><td><a href="../CHANGELOG.md">CHANGELOG.md</a></td><td>Current</td><td>Every release, newest first, plus the versioning policy.</td></tr>
           <tr><td><a href="./prototype-iteration-brief.md">Prototype iteration brief</a></td><td>Implemented in v0.3.0</td><td>Requirements for the Star Designs gallery and questionnaire.</td></tr>
+          <tr><td><a href="./superpowers/specs/2026-10-04-star-shapes-design.md">Star Shapes design spec</a></td><td>Implemented in v0.4.0</td><td>The shape exploration: five silhouettes, generator, page, and tests.</td></tr>
           <tr><td><a href="./superpowers/specs/2026-10-04-star-designs-gallery-design.md">Gallery design spec</a></td><td>Implemented in v0.3.0</td><td>Decisions layered on the brief: layout, buttons, files, testing.</td></tr>
           <tr><td><a href="./project-spec.md">Project specification v1.0</a></td><td>Long-term direction</td><td>The full star maker (StarSpec data model, renderer, exports). Not built yet. Narrower iteration briefs take precedence where they differ.</td></tr>
           <tr><td><a href="https://github.com/polarispixels/all-star-studio/blob/main/CLAUDE.md">CLAUDE.md</a></td><td>Current</td><td>Instructions for coding agents: constraints, architecture, commands, release checklist.</td></tr>

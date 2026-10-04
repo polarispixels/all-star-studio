@@ -59,6 +59,22 @@ try {
   localStorage.setItem('all-star-studio.prototype-feedback.v1', '{bad json');
   w().location.reload(); await loaded(); await sleep(800);
   ok(d().querySelectorAll('.theme').length === 4, 'page still works with corrupt storage');
+  // ---- Star Shapes ----
+  f.src = '../shapes/'; await loaded(); await sleep(900);
+  ok(d().querySelectorAll('.shape-card').length === 5, 'shapes: five shape cards');
+  ok(d().querySelectorAll('.shape-card svg').length === 5 * 5, 'shapes: 5 SVG copies per card');
+  const sids = [...d().querySelectorAll('[id]')].map((e) => e.id);
+  ok(new Set(sids).size === sids.length, 'shapes: all ids unique');
+  ok(d().getElementById('summary').textContent.includes('Favorite shape: Not answered'), 'shapes: summary starts unanswered');
+  click('input[name="favorite"][value="plump"]');
+  const sc = d().getElementById('comment-plump'); sc.value = 'Rounder please'; sc.dispatchEvent(new Event('input', { bubbles: true }));
+  ok(d().getElementById('summary').textContent.includes('Favorite shape: Plump') && d().getElementById('summary').textContent.includes('Rounder please'), 'shapes: summary reflects pick and note');
+  await sleep(500);
+  w().location.reload(); await loaded(); await sleep(900);
+  ok(d().querySelector('input[name="favorite"][value="plump"]').checked && d().getElementById('comment-plump').value === 'Rounder please', 'shapes: pick and note survive reload');
+  click('input[name="favorite"][value="none"]');
+  ok(!d().querySelector('input[name="favorite"][value="plump"]').checked && d().getElementById('summary').textContent.includes('None of these yet'), 'shapes: "None of these yet" is one group with the cards');
+  ok(getComputedStyle(d().getElementById('version-banner')).display === 'none', 'shapes: no version banner on normal visit');
 } catch (e) { out.push('ERROR ' + e.stack); }
 document.getElementById('out').textContent = out.join('\n') + '\nDONE';
 </script>

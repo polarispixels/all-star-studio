@@ -5,11 +5,11 @@ import { join } from 'node:path';
 
 export const STAR_POINTS = '500,60 616.4,339.8 918.5,364 688.3,561.2 758.6,856 500,698 241.4,856 311.7,561.2 81.5,364 383.6,339.8';
 
-export function checkSvg(src) {
+export function checkSvg(src, { sharedStar = true } = {}) {
   const errors = [];
   if (!/<svg[^>]*viewBox="0 0 1000 1000"/.test(src)) errors.push('viewBox must be "0 0 1000 1000"');
   if (!/<title[^>]*>[^<]+<\/title>/.test(src)) errors.push('missing <title>');
-  if (!src.includes(STAR_POINTS)) errors.push('shared star polygon points not found');
+  if (sharedStar && !src.includes(STAR_POINTS)) errors.push('shared star polygon points not found');
   if (/<script|<image|<foreignObject|<text|<style[^>]*>[^<]*@import/i.test(src)) errors.push('contains script, image, foreignObject, text, or @import');
   if (/(?:href|src)="(?!#)[^"]+"/.test(src.replace(/xmlns(:\w+)?="[^"]*"/g, ''))) errors.push('external href/src reference');
   if (/url\((?!#)/.test(src)) errors.push('url() not pointing to a local #id');
@@ -27,7 +27,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const files = process.argv.slice(2).length ? process.argv.slice(2) : readdirSync(dir).filter((f) => f.endsWith('.svg')).map((f) => join(dir, f));
   let bad = 0;
   for (const f of files) {
-    const errs = checkSvg(readFileSync(f, 'utf8'));
+    const errs = checkSvg(readFileSync(f, 'utf8'), { sharedStar: !f.includes('/shapes/') });
     console.log(`${errs.length ? 'FAIL' : 'ok  '} ${f}${errs.map((e) => `\n     - ${e}`).join('')}`);
     bad += errs.length ? 1 : 0;
   }

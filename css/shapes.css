@@ -1,0 +1,22 @@
+/* Star Shapes: one card per shape. Builds on designs.css tokens, tiles and the Send section. */
+.shape-list { display: grid; gap: 28px; }
+.shape-card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: grid; gap: 16px; min-width: 0; }
+.shape-card h2 { font-size: 1.6rem; }
+.shape-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 640px; }
+.shape-pair figure, .sizes figure { margin: 0; display: grid; gap: 6px; justify-items: center; }
+.shape-pair .art { width: 100%; aspect-ratio: 1; background: var(--art-bg); border-radius: 14px; padding: 6%; display: grid; place-items: center; }
+figcaption { font-size: .9rem; color: var(--muted); text-align: center; }
+.sizes { background: var(--bg); border-radius: 14px; padding: 12px 14px; display: grid; gap: 8px; }
+.sizes-label { font-weight: 700; font-size: .95rem; }
+.sizes-row { display: flex; flex-wrap: wrap; align-items: end; gap: 18px; }
+.art-48 { width: 48px; height: 48px; }
+.art-96 { width: 96px; height: 96px; }
+.circle { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; background: #dfe7ef; border: 2px solid var(--line); }
+.fav { grid-template-columns: minmax(0, 420px); }
+.shape-more { display: grid; gap: 20px; }
+@media (max-width: 560px) {
+  .shape-card { padding: 16px; }
+  .shape-pair { gap: 10px; }
+  .sizes-row { gap: 12px; }
+  .art-96, .circle { width: 76px; height: 76px; }
+}
