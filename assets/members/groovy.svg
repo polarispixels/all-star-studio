@@ -39,6 +39,12 @@
     <path d="M262,364 L262,456 M262,410 L229.5,442.5 M262,410 L294.5,442.5" fill="none" stroke="#243447" stroke-width="34" stroke-linecap="round"/>
     <circle cx="262" cy="410" r="46" fill="none" stroke="#FFFDF5" stroke-width="18"/>
     <path d="M262,364 L262,456 M262,410 L229.5,442.5 M262,410 L294.5,442.5" fill="none" stroke="#FFFDF5" stroke-width="18" stroke-linecap="round"/>
+    <g transform="translate(388 290)">
+      <circle cx="262" cy="410" r="46" fill="none" stroke="#243447" stroke-width="34"/>
+      <path d="M262,364 L262,456 M262,410 L229.5,442.5 M262,410 L294.5,442.5" fill="none" stroke="#243447" stroke-width="34" stroke-linecap="round"/>
+      <circle cx="262" cy="410" r="46" fill="none" stroke="#FFFDF5" stroke-width="18"/>
+      <path d="M262,364 L262,456 M262,410 L229.5,442.5 M262,410 L294.5,442.5" fill="none" stroke="#FFFDF5" stroke-width="18" stroke-linecap="round"/>
+    </g>
     <ellipse cx="500" cy="384" rx="45.4" ry="84" transform="rotate(0 500 468)" fill="#FFFDF5" stroke="#243447" stroke-width="8"/>
     <ellipse cx="500" cy="384" rx="45.4" ry="84" transform="rotate(30 500 468)" fill="#FFFDF5" stroke="#243447" stroke-width="8"/>
     <ellipse cx="500" cy="384" rx="45.4" ry="84" transform="rotate(60 500 468)" fill="#FFFDF5" stroke="#243447" stroke-width="8"/>

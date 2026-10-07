@@ -11,6 +11,12 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.9.1] - 2026-10-07
+
+### Changed
+- Becky's Groovy 70s star (now version 2): a second peace sign in the lower-right point, matching the upper-left
+  one, per her change request.
+
 ## [0.9.0] - 2026-10-07
 
 ### Added
@@ -177,7 +183,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.9.1...HEAD
+[0.9.1]: https://github.com/polarispixels/all-star-studio/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/polarispixels/all-star-studio/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/polarispixels/all-star-studio/compare/v0.7.1...v0.8.0
 [0.7.1]: https://github.com/polarispixels/all-star-studio/compare/v0.7.0...v0.7.1
