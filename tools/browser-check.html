@@ -83,9 +83,14 @@ try {
   const cards = d().querySelectorAll('.member-card');
   ok(cards.length === 9, 'members: 8 member cards + "Want your own star?"');
   ok(cards[0].getAttribute('href') === '../member/?id=becky' && d().querySelectorAll('.member-card svg').length === 8, 'members: cards link to member pages and show stars');
+  ok(/Groovy/.test(cards[0].querySelector('svg title')?.textContent ?? ''), "members: Becky's card shows her main (groovy) star");
   f.src = '../member/?id=becky'; await loaded(); await sleep(900);
   ok(d().querySelector('h1').textContent === "Becky's stars" && d().querySelectorAll('.member-star').length === 2 && d().querySelectorAll('.member-star svg').length === 8, 'member: Becky page shows both stars, each with hero + 3 previews');
   ok(d().querySelectorAll('input[name="which-star"]').length === 2, 'member: two-star page asks which star a request is about');
+  const sects = d().querySelectorAll('.member-star');
+  ok(sects[0].id === 'star-groovy' && sects[0].querySelector('.main-badge') && !sects[1].querySelector('.main-badge'), 'member: main star (groovy) is first with the Main star badge');
+  ok(!sects[0].querySelector('.make-main') && sects[1].querySelector('.make-main'), 'member: only the other star offers "Make this my main star"');
+  ok(d().querySelector('input[name="which-star"]:checked')?.value === 'groovy', 'member: change-request picker defaults to the main star');
   f.src = '../member/?id=scott'; await loaded(); await sleep(800);
   ok(d().querySelector('h1').textContent === "Scott's star" && !d().querySelector('input[name="which-star"]'), 'member: one-star page has no star picker');
   f.src = '../member/?id=becky'; await loaded(); await sleep(900);
@@ -98,7 +103,7 @@ try {
   ok(pngBlob.type === 'image/png' && head.getUint32(16) === 1024 && head.getUint32(20) === 1024, 'member: PNG is 1024x1024 image/png');
   // Pixel content (white square + star) is checked visually; decoding PNGs stalls in headless Chrome.
   [...d().querySelectorAll('button')].find((b) => b.textContent.startsWith('Download for Teams')).click(); await sleep(1500);
-  ok(/Downloaded all-star-becky\.png/.test(d().querySelector('.dl-status').textContent), 'member: PNG download button confirms');
+  ok(/Downloaded all-star-becky-groovy\.png/.test(d().querySelector('.dl-status').textContent), 'member: PNG download button confirms (main star first)');
   const rq = d().getElementById('request'); rq.value = 'Add a tent'; rq.dispatchEvent(new Event('input', { bubbles: true }));
   await sleep(500); w().location.reload(); await loaded(); await sleep(900);
   ok(d().getElementById('request').value === 'Add a tent', 'member: request draft survives reload');

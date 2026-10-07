@@ -1,6 +1,6 @@
 // One member's page (member/?id=...): their star, avatar previews, PNG/SVG downloads, change request.
 import { findMember, NEW_ID, memberStarPath, memberStars } from './roster.js';
-import { changeRequestText, newStarRequestText, LIMITS } from './request.js';
+import { changeRequestText, newStarRequestText, primaryRequestText, LIMITS } from './request.js';
 import { $, el, artSlot, svgText, downloadBlob, wireRequestSend, tileGroup } from '../ui.js';
 import { readRaw, writeRaw } from '../store.js';
 import { svgToPngBlob } from '../png.js';
@@ -28,6 +28,19 @@ function field({ id: fid, label, max, rows, value, onInput, input = false }) {
   upd();
   ctl.addEventListener('input', () => { upd(); onInput(ctl.value); });
   return el('div', { class: 'textbox' }, el('label', { for: fid, text: label }), ctl, count);
+}
+
+// "Make this my main star": a ready-made request the member sends to Ryan (no backend to save it).
+function makeMainBlock(star) {
+  const shareBtn = el('button', { type: 'button', class: 'btn', hidden: true, text: 'Share' });
+  const copyBtn = el('button', { type: 'button', class: 'btn', text: 'Copy' });
+  const status = el('p', { class: 'send-status', role: 'status', 'aria-live': 'polite' });
+  wireRequestSend({ shareBtn, copyBtn, statusEl: status, shareTitle: 'All-Star Studio main star request', getText: () => primaryRequestText(member, star) });
+  return el('div', { class: 'make-main' },
+    el('h3', { text: 'Make this my main star' }),
+    el('p', { class: 'hint', text: `Send Ryan a quick note and he'll make ${star.label} your main star: first on your page and on your Team Members card.` }),
+    el('div', { class: 'actions' }, shareBtn, copyBtn),
+    status);
 }
 
 function render() {
@@ -83,7 +96,7 @@ function render() {
         }
       });
       main.append(el('section', { class: 'member-star', id: `star-${star.file}`, 'aria-label': star.label },
-        multi ? el('h2', { class: 'star-label', text: star.label }) : null,
+        multi ? el('h2', { class: 'star-label' }, el('span', { text: star.label }), star.primary ? el('span', { class: 'main-badge', text: '★ Main star' }) : null) : null,
         el('div', { class: 'member-hero' }, artSlot(path)),
         el('div', { class: 'sizes' },
           el('p', { class: 'sizes-label', text: 'Avatar size' }),
@@ -95,6 +108,7 @@ function render() {
         ),
         el('div', { class: 'actions' }, png, svg),
         status,
+        multi && !star.primary ? makeMainBlock(star) : null,
       ));
     }
     main.append(el('h2', { class: 'request-title', text: 'Want a change?' }));

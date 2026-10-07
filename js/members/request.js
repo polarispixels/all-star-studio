@@ -24,3 +24,13 @@ export function newStarRequestText(name, idea) {
   if (!n || !i) return null;
   return ['All-Star Studio: new star request', `Name: ${n}`, '', 'Idea:', i, ''].join('\n');
 }
+
+// Asks Ryan to make `star` the member's main star (the roster's `primary`).
+export function primaryRequestText(member, star) {
+  return [
+    'All-Star Studio: main star request',
+    `For: ${member.name}`,
+    `Make my main star: ${star.file} (version ${star.starVersion}), "${star.label}"`,
+    '',
+  ].join('\n');
+}

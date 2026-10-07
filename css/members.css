@@ -29,4 +29,7 @@
 @media (max-width: 560px) { .member-grid { grid-template-columns: 1fr 1fr; gap: 12px; } .member-card { padding: 12px; } .member-name { font-size: 1.1rem; } }
 .member-star { display: grid; gap: 16px; }
 .member-star + .member-star { border-top: 2px solid var(--line); padding-top: 22px; }
-.star-label { font-size: 1.4rem; }
+.star-label { font-size: 1.4rem; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.main-badge { font-size: .85rem; letter-spacing: .04em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.make-main { background: var(--surface); border: 1px dashed var(--accent); border-radius: 14px; padding: 14px 16px; display: grid; gap: 8px; }
+.make-main h3 { font-size: 1.1rem; }

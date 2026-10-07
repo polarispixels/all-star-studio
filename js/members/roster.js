@@ -2,11 +2,13 @@
 // Adding someone = one entry here + assets/members/<id>.svg drawn on house shape F.
 // Bump starVersion when a member's star is redrawn, so change requests name the version they refer to.
 // A member can have more stars: `extraStars: [{ file, label, starVersion }]` (art in assets/members/<file>.svg).
+// `primary: '<file>'` picks the main star (card picture, shown first). Default: the member's own <id> star.
 export const ROSTER = [
   {
-    id: 'becky', name: 'Becky', blurb: 'Mountains, evergreens and a kayak on the lake, plus a groovy 70s star.', starVersion: 1,
+    id: 'becky', name: 'Becky', blurb: 'A groovy 70s flower-power star, plus mountains and a kayak on the lake.', starVersion: 1,
     starLabel: 'Mountains and kayak',
     extraStars: [{ file: 'groovy', label: 'Groovy 70s', starVersion: 2 }],
+    primary: 'groovy',
   },
   { id: 'scott', name: 'Scott', blurb: 'A phoenix rising, wings raised.', starVersion: 1 },
   { id: 'detective', name: 'Detective', blurb: 'All-Star detective at your service: always investigating.', starVersion: 1 },
@@ -22,8 +24,10 @@ export const NEW_ID = 'new';
 export const findMember = (id) => ROSTER.find((m) => m.id === id || m.aliases?.includes(id)) ?? null;
 export const memberStarPath = (id, prefix = '../') => `${prefix}assets/members/${id}.svg`;
 
-// Every star a member has, main one first: [{ file, label, starVersion }].
-export const memberStars = (m) => [
-  { file: m.id, label: m.starLabel ?? `${m.name}'s star`, starVersion: m.starVersion },
-  ...(m.extraStars ?? []),
-];
+// Every star a member has, main one first: [{ file, label, starVersion, primary }].
+export function memberStars(m) {
+  const all = [{ file: m.id, label: m.starLabel ?? `${m.name}'s star`, starVersion: m.starVersion }, ...(m.extraStars ?? [])];
+  const main = all.find((s) => s.file === m.primary) ?? all[0];
+  return [main, ...all.filter((s) => s !== main)].map((s) => ({ ...s, primary: s === main }));
+}
+export const primaryStar = (m) => memberStars(m)[0];

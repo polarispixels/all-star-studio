@@ -11,6 +11,18 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-10-07
+
+### Added
+- **Main star.** For members with several stars, the roster's `primary` picks the main one. It shows first on
+  their page with a "★ Main star" badge, appears on their Team Members card, and is the default for change
+  requests. Each other star offers **Make this my main star**: Share or Copy sends Ryan a ready-made request
+  (no backend, so Ryan updates the roster).
+
+### Changed
+- **Becky's main star is now Groovy 70s**, per her request. Her card and page lead with it, and the kayak star is
+  second.
+
 ## [0.9.1] - 2026-10-07
 
 ### Changed
@@ -183,7 +195,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.9.1...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/polarispixels/all-star-studio/compare/v0.9.1...v0.10.0
 [0.9.1]: https://github.com/polarispixels/all-star-studio/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/polarispixels/all-star-studio/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/polarispixels/all-star-studio/compare/v0.7.1...v0.8.0

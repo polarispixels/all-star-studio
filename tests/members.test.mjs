@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
-import { ROSTER, findMember, NEW_ID, memberStars } from '../js/members/roster.js';
-import { changeRequestText, newStarRequestText, LIMITS } from '../js/members/request.js';
+import { ROSTER, findMember, NEW_ID, memberStars, primaryStar } from '../js/members/roster.js';
+import { changeRequestText, newStarRequestText, primaryRequestText, LIMITS } from '../js/members/request.js';
 import { checkSvg } from './check-svgs.mjs';
 
 test('roster ids are unique, url-safe, and not reserved', () => {
@@ -29,6 +29,23 @@ for (const m of ROSTER) {
 test('star files are not shared between members', () => {
   const files = ROSTER.flatMap((m) => memberStars(m).map((s) => s.file));
   assert.equal(new Set(files).size, files.length);
+});
+
+test('primary star comes first and exactly one star is primary', () => {
+  for (const m of ROSTER) {
+    const stars = memberStars(m);
+    assert.equal(stars.filter((s) => s.primary).length, 1, m.id);
+    assert.ok(stars[0].primary, m.id);
+    if (m.primary) assert.equal(stars[0].file, m.primary, `${m.id}: primary '${m.primary}' is not one of their stars`);
+  }
+  assert.equal(primaryStar(findMember('becky')).file, 'groovy');
+  assert.equal(primaryStar(findMember('scott')).file, 'scott');
+});
+
+test('main star request names the member and the star', () => {
+  const becky = findMember('becky');
+  const kayak = memberStars(becky).find((s) => s.file === 'becky');
+  assert.equal(primaryRequestText(becky, kayak), 'All-Star Studio: main star request\nFor: Becky\nMake my main star: becky (version 1), "Mountains and kayak"\n');
 });
 
 test('a change request for an extra star names that star', () => {
