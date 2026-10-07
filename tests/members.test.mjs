@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
-import { ROSTER, findMember, NEW_ID } from '../js/members/roster.js';
+import { ROSTER, findMember, NEW_ID, memberStars } from '../js/members/roster.js';
 import { changeRequestText, newStarRequestText, LIMITS } from '../js/members/request.js';
 import { checkSvg } from './check-svgs.mjs';
 
@@ -17,12 +17,26 @@ test('roster uses first names only (no surnames)', () => {
 });
 
 for (const m of ROSTER) {
-  test(`member star ${m.id} exists and uses the house silhouette`, () => {
-    const url = new URL(`../assets/members/${m.id}.svg`, import.meta.url);
-    assert.ok(existsSync(url), `missing assets/members/${m.id}.svg`);
-    assert.deepEqual(checkSvg(readFileSync(url, 'utf8')), []);
-  });
+  for (const s of memberStars(m)) {
+    test(`member star ${m.id}/${s.file} exists and uses the house silhouette`, () => {
+      const url = new URL(`../assets/members/${s.file}.svg`, import.meta.url);
+      assert.ok(existsSync(url), `missing assets/members/${s.file}.svg`);
+      assert.deepEqual(checkSvg(readFileSync(url, 'utf8')), []);
+    });
+  }
 }
+
+test('star files are not shared between members', () => {
+  const files = ROSTER.flatMap((m) => memberStars(m).map((s) => s.file));
+  assert.equal(new Set(files).size, files.length);
+});
+
+test('a change request for an extra star names that star', () => {
+  const becky = findMember('becky');
+  const groovy = memberStars(becky).find((s) => s.file === 'groovy');
+  assert.match(changeRequestText(becky, 'More flowers', groovy), /Star: groovy \(version 1\), "Groovy 70s"/);
+  assert.match(changeRequestText(becky, 'Add a tent'), /Star: becky \(version 1\)\n/);
+});
 
 test('renamed members keep their old links', () => {
   assert.equal(findMember('quick-response')?.id, 'dixie');

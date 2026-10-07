@@ -1,7 +1,7 @@
 // One member's page (member/?id=...): their star, avatar previews, PNG/SVG downloads, change request.
-import { findMember, NEW_ID, memberStarPath } from './roster.js';
+import { findMember, NEW_ID, memberStarPath, memberStars } from './roster.js';
 import { changeRequestText, newStarRequestText, LIMITS } from './request.js';
-import { $, el, artSlot, svgText, downloadBlob, wireRequestSend } from '../ui.js';
+import { $, el, artSlot, svgText, downloadBlob, wireRequestSend, tileGroup } from '../ui.js';
 import { readRaw, writeRaw } from '../store.js';
 import { svgToPngBlob } from '../png.js';
 
@@ -13,7 +13,7 @@ const draftKey = `all-star-studio.member-request.v1.${isNew ? NEW_ID : id}`;
 function loadDraft() {
   try { return JSON.parse(readRaw(draftKey) ?? '{}') ?? {}; } catch { return {}; }
 }
-const draft = { text: '', name: '', ...loadDraft() };
+const draft = { text: '', name: '', star: null, ...loadDraft() };
 let saveTimer = null;
 function saveDraft() {
   clearTimeout(saveTimer);
@@ -50,47 +50,63 @@ function render() {
     );
   } else {
     document.title = `${member.name}'s star · All-Star Studio`;
-    const status = el('p', { class: 'dl-status', role: 'status' });
-    const png = el('button', { type: 'button', class: 'btn btn-big', text: 'Download for Teams / Outlook' });
-    const svg = el('button', { type: 'button', class: 'btn btn-quiet', text: 'Download SVG' });
-    const fname = `all-star-${member.id}`;
-    png.addEventListener('click', async () => {
-      status.textContent = 'Making your picture…';
-      try {
-        const text = await svgText(memberStarPath(member.id));
-        let blob;
-        try { blob = await svgToPngBlob(text, 1024); } catch { blob = await svgToPngBlob(text, 512); }
-        downloadBlob(blob, `${fname}.png`);
-        status.textContent = `Downloaded ${fname}.png. Use it as your profile picture in Teams or Outlook.`;
-      } catch {
-        status.textContent = "Couldn't make the picture on this device. Try Download SVG, or ask Ryan to send you the PNG.";
-      }
-    });
-    svg.addEventListener('click', async () => {
-      try {
-        downloadBlob(new Blob([await svgText(memberStarPath(member.id))], { type: 'image/svg+xml' }), `${fname}.svg`);
-        status.textContent = `Downloaded ${fname}.svg`;
-      } catch {
-        status.textContent = "Couldn't download the star. Check your connection and try again.";
-      }
-    });
+    const stars = memberStars(member);
+    const multi = stars.length > 1;
     main.append(
-      el('h1', { text: member.placeholder ? member.name : `${member.name}'s star` }),
+      el('h1', { text: member.placeholder ? member.name : multi ? `${member.name}'s stars` : `${member.name}'s star` }),
       el('p', { class: 'lede', text: member.placeholder ? `${member.blurb} Teammate's name coming soon.` : member.blurb }),
-      el('div', { class: 'member-hero' }, artSlot(memberStarPath(member.id))),
-      el('div', { class: 'sizes' },
-        el('p', { class: 'sizes-label', text: 'Avatar size' }),
-        el('div', { class: 'sizes-row' },
-          el('figure', {}, artSlot(memberStarPath(member.id), { decorative: true, className: 'art art-32' }), el('figcaption', { text: 'Tiny' })),
-          el('figure', {}, artSlot(memberStarPath(member.id), { decorative: true, className: 'art art-64' }), el('figcaption', { text: 'Small' })),
-          el('figure', {}, el('div', { class: 'circle' }, artSlot(memberStarPath(member.id), { decorative: true })), el('figcaption', { text: 'In a circle' })),
-        ),
-      ),
-      el('div', { class: 'actions' }, png, svg),
-      status,
-      el('h2', { class: 'request-title', text: 'Want a change?' }),
-      field({ id: 'request', label: 'What would you change about your star?', max: LIMITS.request, rows: 4, value: draft.text, onInput: (v) => { draft.text = v; saveDraft(); } }),
     );
+    for (const star of stars) {
+      const path = memberStarPath(star.file);
+      const status = el('p', { class: 'dl-status', role: 'status' });
+      const png = el('button', { type: 'button', class: 'btn btn-big', text: 'Download for Teams / Outlook' });
+      const svg = el('button', { type: 'button', class: 'btn btn-quiet', text: 'Download SVG' });
+      const fname = `all-star-${star.file === member.id ? member.id : `${member.id}-${star.file}`}`;
+      png.addEventListener('click', async () => {
+        status.textContent = 'Making your picture…';
+        try {
+          const text = await svgText(path);
+          let blob;
+          try { blob = await svgToPngBlob(text, 1024); } catch { blob = await svgToPngBlob(text, 512); }
+          downloadBlob(blob, `${fname}.png`);
+          status.textContent = `Downloaded ${fname}.png. Use it as your profile picture in Teams or Outlook.`;
+        } catch {
+          status.textContent = "Couldn't make the picture on this device. Try Download SVG, or ask Ryan to send you the PNG.";
+        }
+      });
+      svg.addEventListener('click', async () => {
+        try {
+          downloadBlob(new Blob([await svgText(path)], { type: 'image/svg+xml' }), `${fname}.svg`);
+          status.textContent = `Downloaded ${fname}.svg`;
+        } catch {
+          status.textContent = "Couldn't download the star. Check your connection and try again.";
+        }
+      });
+      main.append(el('section', { class: 'member-star', id: `star-${star.file}`, 'aria-label': star.label },
+        multi ? el('h2', { class: 'star-label', text: star.label }) : null,
+        el('div', { class: 'member-hero' }, artSlot(path)),
+        el('div', { class: 'sizes' },
+          el('p', { class: 'sizes-label', text: 'Avatar size' }),
+          el('div', { class: 'sizes-row' },
+            el('figure', {}, artSlot(path, { decorative: true, className: 'art art-32' }), el('figcaption', { text: 'Tiny' })),
+            el('figure', {}, artSlot(path, { decorative: true, className: 'art art-64' }), el('figcaption', { text: 'Small' })),
+            el('figure', {}, el('div', { class: 'circle' }, artSlot(path, { decorative: true })), el('figcaption', { text: 'In a circle' })),
+          ),
+        ),
+        el('div', { class: 'actions' }, png, svg),
+        status,
+      ));
+    }
+    main.append(el('h2', { class: 'request-title', text: 'Want a change?' }));
+    if (multi) {
+      if (!stars.some((x) => x.file === draft.star)) draft.star = stars[0].file;
+      main.append(tileGroup({
+        legend: 'Which star is this about?', name: 'which-star', type: 'radio',
+        choices: stars.map((x) => ({ id: x.file, label: x.label })), selected: draft.star,
+        onChange: (v) => { draft.star = v; saveDraft(); },
+      }));
+    }
+    main.append(field({ id: 'request', label: multi ? 'What would you change about it?' : 'What would you change about your star?', max: LIMITS.request, rows: 4, value: draft.text, onInput: (v) => { draft.text = v; saveDraft(); } }));
   }
 
   const shareBtn = el('button', { type: 'button', class: 'btn btn-big', hidden: true, text: 'Share' });
@@ -106,7 +122,8 @@ function render() {
   wireRequestSend({
     shareBtn, copyBtn, statusEl: sendStatus,
     shareTitle: 'All-Star Studio star request',
-    getText: () => (isNew ? newStarRequestText(draft.name, draft.text) : changeRequestText(member, draft.text)),
+    getText: () => (isNew ? newStarRequestText(draft.name, draft.text)
+      : changeRequestText(member, draft.text, memberStars(member).find((x) => x.file === draft.star) ?? memberStars(member)[0])),
   });
 }
 

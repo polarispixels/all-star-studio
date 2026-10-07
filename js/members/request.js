@@ -3,13 +3,14 @@ export const LIMITS = { request: 1000, name: 40, idea: 1000 };
 
 const clean = (s, max) => (typeof s === 'string' ? s.trim().slice(0, max) : '');
 
-export function changeRequestText(member, text) {
+// `star` is one of memberStars(member); defaults to the member's main star.
+export function changeRequestText(member, text, star = { file: member.id, starVersion: member.starVersion }) {
   const request = clean(text, LIMITS.request);
   if (!request) return null;
   return [
     'All-Star Studio: star change request',
     `For: ${member.name}`,
-    `Star: ${member.id} (version ${member.starVersion})`,
+    `Star: ${star.file} (version ${star.starVersion})${star.label && member.extraStars?.length ? `, "${star.label}"` : ''}`,
     '',
     'Request:',
     request,

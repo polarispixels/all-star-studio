@@ -11,6 +11,18 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-10-07
+
+### Added
+- **Becky's groovy 70s star** (from her first "Want your own star?" request: "Hippie 70's theme. Groovy"):
+  a big smiling daisy over 70s sunset rainbow stripes, with a peace sign and two small daisies, on house shape B.
+- **Members can have more than one star.** The roster's `extraStars` lists them. A member page shows every
+  star with its own avatar previews and downloads. For a change request, the page asks "Which star is this
+  about?", and the message names that star.
+
+### Changed
+- Becky's page is now "Becky's stars": Mountains and kayak, plus Groovy 70s.
+
 ## [0.8.0] - 2026-10-04
 
 ### Added
@@ -165,7 +177,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/polarispixels/all-star-studio/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/polarispixels/all-star-studio/compare/v0.7.1...v0.8.0
 [0.7.1]: https://github.com/polarispixels/all-star-studio/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/polarispixels/all-star-studio/compare/v0.6.0...v0.7.0

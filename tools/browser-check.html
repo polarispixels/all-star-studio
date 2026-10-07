@@ -84,7 +84,11 @@ try {
   ok(cards.length === 9, 'members: 8 member cards + "Want your own star?"');
   ok(cards[0].getAttribute('href') === '../member/?id=becky' && d().querySelectorAll('.member-card svg').length === 8, 'members: cards link to member pages and show stars');
   f.src = '../member/?id=becky'; await loaded(); await sleep(900);
-  ok(d().querySelector('h1').textContent === "Becky's star" && d().querySelectorAll('svg').length === 4, 'member: Becky page shows hero + 3 avatar previews');
+  ok(d().querySelector('h1').textContent === "Becky's stars" && d().querySelectorAll('.member-star').length === 2 && d().querySelectorAll('.member-star svg').length === 8, 'member: Becky page shows both stars, each with hero + 3 previews');
+  ok(d().querySelectorAll('input[name="which-star"]').length === 2, 'member: two-star page asks which star a request is about');
+  f.src = '../member/?id=scott'; await loaded(); await sleep(800);
+  ok(d().querySelector('h1').textContent === "Scott's star" && !d().querySelector('input[name="which-star"]'), 'member: one-star page has no star picker');
+  f.src = '../member/?id=becky'; await loaded(); await sleep(900);
   const mc = d().querySelector('.circle'), ms = mc.querySelector('svg').getBoundingClientRect(), mr = mc.getBoundingClientRect();
   ok(Math.abs((ms.left + ms.width / 2) - (mr.left + mr.width / 2)) < 0.5 && Math.abs((ms.top + ms.height / 2) - (mr.top + mr.height / 2)) < 0.5, 'member: star centered in circle');
   const { svgToPngBlob } = await import('../js/png.js');
