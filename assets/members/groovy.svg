@@ -35,10 +35,7 @@
     <ellipse cx="338" cy="679" rx="17.8" ry="33" transform="rotate(324 338 712)" fill="#FFFDF5" stroke="#243447" stroke-width="6"/>
     <circle cx="338" cy="712" r="26.4" fill="#E3A81C" stroke="#243447" stroke-width="6"/>
     <circle cx="338" cy="712" r="11.9" fill="#D9622B"/>
-    <circle cx="262" cy="410" r="46" fill="none" stroke="#243447" stroke-width="34"/>
-    <path d="M262,364 L262,456 M262,410 L229.5,442.5 M262,410 L294.5,442.5" fill="none" stroke="#243447" stroke-width="34" stroke-linecap="round"/>
-    <circle cx="262" cy="410" r="46" fill="none" stroke="#FFFDF5" stroke-width="18"/>
-    <path d="M262,364 L262,456 M262,410 L229.5,442.5 M262,410 L294.5,442.5" fill="none" stroke="#FFFDF5" stroke-width="18" stroke-linecap="round"/>
+    <path d="M0,42 C-14,28 -50,2 -50,-22 C-50,-42 -36,-52 -23,-52 C-11,-52 -3,-45 0,-36 C3,-45 11,-52 23,-52 C36,-52 50,-42 50,-22 C50,2 14,28 0,42 Z" transform="translate(262 418)" fill="#D9622B" stroke="#243447" stroke-width="8" stroke-linejoin="round"/>
     <g transform="translate(388 290)">
       <circle cx="262" cy="410" r="46" fill="none" stroke="#243447" stroke-width="34"/>
       <path d="M262,364 L262,456 M262,410 L229.5,442.5 M262,410 L294.5,442.5" fill="none" stroke="#243447" stroke-width="34" stroke-linecap="round"/>

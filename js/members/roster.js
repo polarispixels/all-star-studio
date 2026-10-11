@@ -7,7 +7,7 @@ export const ROSTER = [
   {
     id: 'becky', name: 'Becky', blurb: 'A groovy 70s flower-power star, plus mountains and a kayak on the lake.', starVersion: 1,
     starLabel: 'Mountains and kayak',
-    extraStars: [{ file: 'groovy', label: 'Groovy 70s', starVersion: 2 }],
+    extraStars: [{ file: 'groovy', label: 'Groovy 70s', starVersion: 3 }],
     primary: 'groovy',
   },
   { id: 'scott', name: 'Scott', blurb: 'A phoenix rising, wings raised.', starVersion: 1 },

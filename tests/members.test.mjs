@@ -51,7 +51,7 @@ test('main star request names the member and the star', () => {
 test('a change request for an extra star names that star', () => {
   const becky = findMember('becky');
   const groovy = memberStars(becky).find((s) => s.file === 'groovy');
-  assert.match(changeRequestText(becky, 'More flowers', groovy), /Star: groovy \(version 2\), "Groovy 70s"/);
+  assert.ok(changeRequestText(becky, 'More flowers', groovy).includes(`Star: groovy (version ${groovy.starVersion}), "Groovy 70s"`));
   assert.match(changeRequestText(becky, 'Add a tent'), /Star: becky \(version 1\)\n/);
 });
 
