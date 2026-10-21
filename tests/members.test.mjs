@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { ROSTER, findMember, NEW_ID, memberStars, primaryStar } from '../js/members/roster.js';
-import { changeRequestText, newStarRequestText, primaryRequestText, LIMITS } from '../js/members/request.js';
+import { changeRequestText, newStarRequestText, primaryRequestText, requestMailto, REQUEST_EMAIL, LIMITS } from '../js/members/request.js';
 import { checkSvg } from './check-svgs.mjs';
 
 test('roster ids are unique, url-safe, and not reserved', () => {
@@ -81,4 +81,12 @@ test('request text is bounded', () => {
 
 test('new star request includes name and idea', () => {
   assert.equal(newStarRequestText(' Pat ', 'A lighthouse'), 'All-Star Studio: new star request\nName: Pat\n\nIdea:\nA lighthouse\n');
+});
+
+test('request mailto: Ryan\'s address, first line as subject, CRLF body', () => {
+  const url = requestMailto(newStarRequestText('Pat', 'A lighthouse & a boat'));
+  assert.equal(REQUEST_EMAIL, 'ryan@polarispixels.com');
+  assert.ok(url.startsWith('mailto:ryan@polarispixels.com?subject=All-Star%20Studio%3A%20new%20star%20request&body='));
+  const body = decodeURIComponent(url.split('&body=')[1]);
+  assert.equal(body, 'All-Star Studio: new star request\r\nName: Pat\r\n\r\nIdea:\r\nA lighthouse & a boat\r\n');
 });

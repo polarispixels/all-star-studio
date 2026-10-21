@@ -1,6 +1,6 @@
 // One member's page (member/?id=...): their star, avatar previews, PNG/SVG downloads, change request.
 import { findMember, NEW_ID, memberStarPath, memberStars } from './roster.js';
-import { changeRequestText, newStarRequestText, primaryRequestText, LIMITS } from './request.js';
+import { changeRequestText, newStarRequestText, primaryRequestText, requestMailto, REQUEST_EMAIL, LIMITS } from './request.js';
 import { $, el, artSlot, svgText, downloadBlob, wireRequestSend, tileGroup } from '../ui.js';
 import { readRaw, writeRaw } from '../store.js';
 import { svgToPngBlob } from '../png.js';
@@ -32,14 +32,15 @@ function field({ id: fid, label, max, rows, value, onInput, input = false }) {
 
 // "Make this my main star": a ready-made request the member sends to Ryan (no backend to save it).
 function makeMainBlock(star) {
+  const emailBtn = el('button', { type: 'button', class: 'btn', text: 'Email Ryan' });
   const shareBtn = el('button', { type: 'button', class: 'btn', hidden: true, text: 'Share' });
   const copyBtn = el('button', { type: 'button', class: 'btn', text: 'Copy' });
   const status = el('p', { class: 'send-status', role: 'status', 'aria-live': 'polite' });
-  wireRequestSend({ shareBtn, copyBtn, statusEl: status, shareTitle: 'All-Star Studio main star request', getText: () => primaryRequestText(member, star) });
+  wireRequestSend({ emailBtn, shareBtn, copyBtn, statusEl: status, toMailto: requestMailto, shareTitle: 'All-Star Studio main star request', getText: () => primaryRequestText(member, star) });
   return el('div', { class: 'make-main' },
     el('h3', { text: 'Make this my main star' }),
     el('p', { class: 'hint', text: `Send Ryan a quick note and he'll make ${star.label} your main star: first on your page and on your Team Members card.` }),
-    el('div', { class: 'actions' }, shareBtn, copyBtn),
+    el('div', { class: 'actions' }, emailBtn, shareBtn, copyBtn),
     status);
 }
 
@@ -123,18 +124,20 @@ function render() {
     main.append(field({ id: 'request', label: multi ? 'What would you change about it?' : 'What would you change about your star?', max: LIMITS.request, rows: 4, value: draft.text, onInput: (v) => { draft.text = v; saveDraft(); } }));
   }
 
+  const emailBtn = el('button', { type: 'button', class: 'btn btn-big', text: 'Email Ryan' });
   const shareBtn = el('button', { type: 'button', class: 'btn btn-big', hidden: true, text: 'Share' });
   const copyBtn = el('button', { type: 'button', class: 'btn btn-big', text: 'Copy' });
   const sendStatus = el('p', { class: 'send-status', role: 'status', 'aria-live': 'polite' });
   main.append(el('section', { class: 'send', 'aria-labelledby': 'send-title' },
     el('h2', { id: 'send-title', text: 'Send to Ryan' }),
-    el('p', { class: 'privacy', text: 'Nothing is sent automatically. Tap Share (or Copy) and send the message to Ryan, and he will redraw your star.' }),
-    el('div', { class: 'actions send-actions' }, shareBtn, copyBtn),
+    el('p', { class: 'privacy', text: 'Tap Email Ryan. Your email opens with the message written for you. Just press Send.' }),
+    el('div', { class: 'actions send-actions' }, emailBtn, shareBtn, copyBtn),
+    el('p', { class: 'hint', text: `Or email Ryan yourself: ${REQUEST_EMAIL}` }),
     sendStatus,
     el('pre', { id: 'request-preview', class: 'request-preview', hidden: true }),
   ));
   wireRequestSend({
-    shareBtn, copyBtn, statusEl: sendStatus,
+    emailBtn, shareBtn, copyBtn, statusEl: sendStatus, toMailto: requestMailto,
     shareTitle: 'All-Star Studio star request',
     getText: () => (isNew ? newStarRequestText(draft.name, draft.text)
       : changeRequestText(member, draft.text, memberStars(member).find((x) => x.file === draft.star) ?? memberStars(member)[0])),

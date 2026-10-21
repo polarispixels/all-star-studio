@@ -207,10 +207,17 @@ export function wireSend({ getText, getJson, baseName, shareTitle }) {
   });
 }
 
-// Share/Copy for a single request message. `getText()` returns the text or null when empty.
-export function wireRequestSend({ shareBtn, copyBtn, statusEl, getText, shareTitle }) {
+// Email/Share/Copy for a single request message. `getText()` returns the text or null when empty;
+// `toMailto(text)` turns it into a mailto: link.
+export function wireRequestSend({ emailBtn, shareBtn, copyBtn, statusEl, getText, toMailto, shareTitle }) {
   const say = (msg) => { statusEl.textContent = ''; requestAnimationFrame(() => { statusEl.textContent = msg; }); };
   const empty = () => say('Type your request first, then send it.');
+  emailBtn.addEventListener('click', () => {
+    const text = getText();
+    if (!text) return empty();
+    window.location.href = toMailto(text);
+    say('Your email should open with the message ready. Just press Send. Nothing opened? Use Copy and email it to Ryan.');
+  });
   if (navigator.share) {
     shareBtn.hidden = false;
     shareBtn.addEventListener('click', async () => {

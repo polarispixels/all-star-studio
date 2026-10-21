@@ -34,3 +34,14 @@ export function primaryRequestText(member, star) {
     '',
   ].join('\n');
 }
+
+// Where requests go. Published on purpose (Ryan asked for it on the page).
+export const REQUEST_EMAIL = 'ryan@polarispixels.com';
+
+// mailto: link for a request message: the first line is the subject, the whole message is the body.
+// CRLF line breaks, because Outlook and some other mail apps ignore a bare %0A.
+export function requestMailto(text) {
+  const subject = text.split('\n')[0];
+  const body = text.replace(/\r?\n/g, '\r\n');
+  return `mailto:${REQUEST_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}

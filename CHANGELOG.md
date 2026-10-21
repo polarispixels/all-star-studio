@@ -11,6 +11,14 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-10-21
+
+### Added
+- **Email Ryan button.** New-star requests, change requests, and "Make this my main star" now have an
+  Email Ryan button that opens the member's email app with the request already written and addressed to
+  ryan@polarispixels.com (`requestMailto` in `js/members/request.js`). The address is also shown on the page.
+  Share and Copy remain as backups. Still no backend: nothing is sent until the member presses Send.
+
 ## [0.10.1] - 2026-10-11
 
 ### Changed
@@ -201,7 +209,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.10.1...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/polarispixels/all-star-studio/compare/v0.10.1...v0.11.0
 [0.10.1]: https://github.com/polarispixels/all-star-studio/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/polarispixels/all-star-studio/compare/v0.9.1...v0.10.0
 [0.9.1]: https://github.com/polarispixels/all-star-studio/compare/v0.9.0...v0.9.1
