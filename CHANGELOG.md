@@ -11,6 +11,12 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-10-21
+
+### Added
+- **Phi's star** (her new-star request, the first sent with Email Ryan): six puzzle pieces on the house
+  shape, a red center piece with jigsaw tabs and five purple arm pieces (`assets/members/phi.svg`).
+
 ## [0.11.0] - 2026-10-21
 
 ### Added
@@ -209,7 +215,8 @@ in `js/version.js`, adds an entry here, updates the version badge in `docs/index
 ### Added
 - Coming-soon homepage with a colorful star logo, docs landing page, project spec, and GitHub Pages deployment.
 
-[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/polarispixels/all-star-studio/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/polarispixels/all-star-studio/compare/v0.11.0...v0.12.0
 [0.11.0]: https://github.com/polarispixels/all-star-studio/compare/v0.10.1...v0.11.0
 [0.10.1]: https://github.com/polarispixels/all-star-studio/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/polarispixels/all-star-studio/compare/v0.9.1...v0.10.0

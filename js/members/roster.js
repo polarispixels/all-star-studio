@@ -13,6 +13,7 @@ export const ROSTER = [
   { id: 'scott', name: 'Scott', blurb: 'A phoenix rising, wings raised.', starVersion: 1 },
   { id: 'detective', name: 'Detective', blurb: 'All-Star detective at your service: always investigating.', starVersion: 1 },
   { id: 'dixie', name: 'Dixie', blurb: 'A cheerful dumpster fire for lightning-fast answers, with a splash of turquoise.', starVersion: 1, aliases: ['quick-response'] },
+  { id: 'phi', name: 'Phi', blurb: 'Purple and red puzzle pieces that fit together into one star.', starVersion: 1 },
   { id: 'support', name: 'Support and Care', blurb: 'A pink awareness ribbon at the heart of the star.', starVersion: 1, placeholder: true },
   { id: 'carousel', name: 'Carousel', blurb: 'A prancing carousel horse: round and round, lifting everyone up together.', starVersion: 1, placeholder: true },
   { id: 'lighthouse', name: 'Lighthouse', blurb: 'A guiding light that helps others find their way.', starVersion: 1, placeholder: true },
